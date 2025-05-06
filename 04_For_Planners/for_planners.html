@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>London CycleNet</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+    <!-- Google Fonts: Nunito (SemiBold 600) + Mulish (Regular 400) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400&family=Nunito:wght@600&display=swap"
+        rel="stylesheet">
+
+    <!-- Mapbox GL -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
+
+    <style>
+        /* Base styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Mulish', sans-serif;
+            /* Body text */
+            font-weight: 400;
+        }
+
+        /* Headings - Nunito SemiBold */
+        .nav-title,
+        .panel-option-title,
+        h1,
+        h2,
+        h3 {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 600;
+            /* SemiBold */
+        }
+
+        /* Navigation */
+        .nav-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background-color: #272829;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 10;
+        }
+
+        .nav-title {
+            font-size: 20px;
+            margin-right: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .github-icon {
+            margin-left: auto;
+        }
+
+        .github-icon img {
+            height: 24px;
+            width: 24px;
+        }
+
+        /* Map container */
+        #map {
+            position: absolute;
+            top: 60px;
+            bottom: 0;
+            width: 78%;
+            right: 0;
+        }
+
+        /* Side panel */
+        .side-panel {
+            position: absolute;
+            width: 20%;
+            top: 60px;
+            left: 0;
+            bottom: 0;
+            background-color: #272829;
+            color: white;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .panel-option {
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+
+        .legend {
+            display: none;
+            margin-top: 10px;
+            padding-left: 15px;
+        }
+
+        .raw-data-link {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: #B2B2B2;
+            font-size: 14px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+        <div class="nav-title">London CycleNet</div>
+        <div class="nav-links">
+            <a href="#">Overview</a>
+            <a href="#">For Students</a>
+            <a href="#">For Planners</a>
+            <a href="#">About</a>
+        </div>
+        <div class="github-icon">
+            <a href="#"><img src="image/github-mark.png" alt="GitHub"></a>
+        </div>
+    </div>
+
+    <!-- Map Container -->
+    <div id='map'></div>
+
+    <!-- Side Panel -->
+    <div class='side-panel'>
+        <div class="panel-option" onclick="toggleLegend('option1')">
+            <div class="panel-option-title">Accident Rate by LSOA</div>
+            <div class="legend" id="option1-legend">
+                <div class="legend-item">Legend1</div>
+                <div class="legend-item">Legend2</div>
+                <div class="legend-item">Legend3</div>
+            </div>
+        </div>
+
+        <div class="panel-option" onclick="toggleLegend('option2')">
+            <div class="panel-option-title">Accident Frequency of Roads</div>
+            <div class="legend" id="option2-legend">
+                <div class="legend-item">Legend1</div>
+                <div class="legend-item">Legend2</div>
+                <div class="legend-item">Legend3</div>
+            </div>
+        </div>
+
+        <div class="panel-option" onclick="toggleLegend('option3')">
+            <div class="panel-option-title">Individual Accident Points</div>
+            <div class="legend" id="option3-legend">
+                <div class="legend-item">Legend1</div>
+                <div class="legend-item">Legend2</div>
+                <div class="legend-item">Legend3</div>
+            </div>
+        </div>
+
+        <a href="https://www.data.gov.uk/dataset/cb7ae6f0-4be6-4935-9277-47e5ce24a11f/road-accidents-safety-data"
+            target="_blank" class="raw-data-link">Raw Data</a>
+    </div>
+
+    <script>
+        // Map initialisation
+        mapboxgl.accessToken = 'pk.eyJ1IjoiYWlsYWdyYW50MjMiLCJhIjoiY202ODRuZmFjMDl4OTJtcjNvNnY1anoydiJ9.IwkY6zSc0skaG5Rrsb_Bog';
+
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/ailagrant23/cmacuf8q900p101qo71nrbjj8',
+            center: [-0.25, 51.2],
+            zoom: 8
+        });
+
+        // Toggle legend visibility
+        const toggleLegend = (optionId) => {
+            const legend = document.getElementById(`${optionId}-legend`);
+            legend.style.display = legend.style.display === 'block' ? 'none' : 'block';
+        };
+
+        // Add map controls
+        map.addControl(new mapboxgl.NavigationControl());
+    </script>
+</body>
+
+</html>
