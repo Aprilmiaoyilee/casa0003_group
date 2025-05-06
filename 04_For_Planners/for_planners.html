@@ -6,7 +6,7 @@
     <title>London CycleNet</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 
-    <!-- Google Fonts: Nunito (SemiBold 600) + Mulish (Regular 400) -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400&family=Nunito:wght@600&display=swap"
@@ -17,44 +17,45 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
 
     <style>
+        /* Colour variables */
+        :root {
+            --purple-dark: rgb(91, 57, 118);
+            --purple-semidark: rgb(197, 159, 221);
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
         /* Base styles */
         body {
             margin: 0;
             padding: 0;
             font-family: 'Mulish', sans-serif;
-            /* Body text */
             font-weight: 400;
         }
 
-        /* Headings - Nunito SemiBold */
-        .nav-title,
-        .panel-option-title,
-        h1,
-        h2,
-        h3 {
-            font-family: 'Nunito', sans-serif;
-            font-weight: 600;
-            /* SemiBold */
-        }
-
-        /* Navigation */
+        /* Navigation bar - top */
         .nav-bar {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 60px;
-            background-color: #272829;
-            color: white;
+            height: 48px;
+            /* Reduced by 1/5 */
+            background-color: white;
             display: flex;
             align-items: center;
             padding: 0 20px;
             z-index: 10;
+            box-shadow: 0 2px 10px var(--shadow-color),
+                0 -1px 0 var(--shadow-color) inset;
+            /* Top and bottom shadow */
         }
 
         .nav-title {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 600;
             font-size: 20px;
             margin-right: 40px;
+            color: var(--purple-dark);
         }
 
         .nav-links {
@@ -63,8 +64,13 @@
         }
 
         .nav-links a {
-            color: white;
+            color: var(--purple-dark);
             text-decoration: none;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
         }
 
         .github-icon {
@@ -79,41 +85,72 @@
         /* Map container */
         #map {
             position: absolute;
-            top: 60px;
+            top: 48px;
             bottom: 0;
-            width: 78%;
+            width: 82%;
+            /* Adjusted for 18% side panel */
             right: 0;
         }
 
         /* Side panel */
         .side-panel {
             position: absolute;
-            width: 20%;
-            top: 60px;
+            width: 18%;
+            /* Changed from 20% */
+            top: 48px;
             left: 0;
             bottom: 0;
-            background-color: #272829;
-            color: white;
+            background-color: white;
             padding: 20px;
             overflow-y: auto;
+            box-shadow: 2px 0 10px var(--shadow-color),
+                -1px 0 0 var(--shadow-color) inset;
+            /* Right shadow */
+            transition: width 0.3s ease;
         }
 
         .panel-option {
             margin-bottom: 15px;
             cursor: pointer;
+            color: var(--purple-semidark);
+        }
+
+        .panel-option.selected {
+            color: var(--purple-dark);
+        }
+
+        .panel-option-title {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 600;
         }
 
         .legend {
             display: none;
             margin-top: 10px;
             padding-left: 15px;
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .legend.active {
+            display: block;
+            max-height: 500px;
+            /* Adjust based on content */
+            padding: 10px 15px;
+        }
+
+        .legend-item {
+            margin-bottom: 15px;
+            /* Increased spacing */
+            font-size: 14px;
         }
 
         .raw-data-link {
             position: absolute;
             bottom: 20px;
             left: 20px;
-            color: #B2B2B2;
+            color: var(--purple-semidark);
             font-size: 14px;
             text-decoration: none;
         }
@@ -140,7 +177,7 @@
 
     <!-- Side Panel -->
     <div class='side-panel'>
-        <div class="panel-option" onclick="toggleLegend('option1')">
+        <div class="panel-option" onclick="toggleLegend(this, 'option1')">
             <div class="panel-option-title">Accident Rate by LSOA</div>
             <div class="legend" id="option1-legend">
                 <div class="legend-item">Legend1</div>
@@ -149,7 +186,7 @@
             </div>
         </div>
 
-        <div class="panel-option" onclick="toggleLegend('option2')">
+        <div class="panel-option" onclick="toggleLegend(this, 'option2')">
             <div class="panel-option-title">Accident Frequency of Roads</div>
             <div class="legend" id="option2-legend">
                 <div class="legend-item">Legend1</div>
@@ -158,7 +195,7 @@
             </div>
         </div>
 
-        <div class="panel-option" onclick="toggleLegend('option3')">
+        <div class="panel-option" onclick="toggleLegend(this, 'option3')">
             <div class="panel-option-title">Individual Accident Points</div>
             <div class="legend" id="option3-legend">
                 <div class="legend-item">Legend1</div>
@@ -172,24 +209,30 @@
     </div>
 
     <script>
-        // Map initialisation
+        // Map initialisation with higher zoom
         mapboxgl.accessToken = 'pk.eyJ1IjoiYWlsYWdyYW50MjMiLCJhIjoiY202ODRuZmFjMDl4OTJtcjNvNnY1anoydiJ9.IwkY6zSc0skaG5Rrsb_Bog';
 
         const map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/ailagrant23/cmacuf8q900p101qo71nrbjj8',
             center: [-0.25, 51.2],
-            zoom: 8
+            zoom: 9, // Increased from 8
+            pitch: 45 // Added for better 3D effect
         });
 
-        // Toggle legend visibility
-        const toggleLegend = (optionId) => {
+        // Toggle legend with animation and colour change
+        const toggleLegend = (element, optionId) => {
             const legend = document.getElementById(`${optionId}-legend`);
-            legend.style.display = legend.style.display === 'block' ? 'none' : 'block';
+            const isActive = legend.classList.contains('active');
+
+            // Toggle active state
+            element.classList.toggle('selected', !isActive);
+            legend.classList.toggle('active', !isActive);
         };
 
         // Add map controls
         map.addControl(new mapboxgl.NavigationControl());
+        map.addControl(new mapboxgl.TerrainControl());
     </script>
 </body>
 
