@@ -9,7 +9,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400&family=Nunito:wght@600&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&family=Nunito:wght@600&display=swap"
         rel="stylesheet">
 
     <!-- Mapbox GL -->
@@ -21,7 +21,8 @@
         :root {
             --purple-dark: rgb(91, 57, 118);
             --purple-semidark: rgb(197, 159, 221);
-            --shadow-color: rgba(0, 0, 0, 0.1);
+            --shadow-color: rgba(0, 0, 0, 0.05);
+            /* 5% opacity */
         }
 
         /* Base styles */
@@ -39,34 +40,38 @@
             left: 0;
             right: 0;
             height: 48px;
-            /* Reduced by 1/5 */
             background-color: white;
             display: flex;
             align-items: center;
             padding: 0 20px;
             z-index: 10;
-            box-shadow: 0 2px 10px var(--shadow-color),
-                0 -1px 0 var(--shadow-color) inset;
-            /* Top and bottom shadow */
+            box-shadow: 0 1px 1px var(--shadow-color),
+                /* 3px width */
+                0 1px 1px var(--shadow-color) inset;
+            border-bottom: 1px solid #f0f0f0;
         }
 
         .nav-title {
             font-family: 'Nunito', sans-serif;
             font-weight: 600;
             font-size: 20px;
-            margin-right: 40px;
+            margin-right: 80px;
+            /* Increased spacing */
             color: var(--purple-dark);
         }
 
         .nav-links {
             display: flex;
-            gap: 20px;
+            gap: 60px;
+            /* Doubled spacing again (from 40px) */
         }
 
         .nav-links a {
             color: var(--purple-dark);
             text-decoration: none;
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Mulish', sans-serif;
+            /* Changed to body font */
+            font-weight: 400;
         }
 
         .nav-links a:hover {
@@ -87,32 +92,42 @@
             position: absolute;
             top: 48px;
             bottom: 0;
-            width: 82%;
-            /* Adjusted for 18% side panel */
+            width: 85%;
+            /* Adjusted for 15% side panel */
             right: 0;
         }
 
         /* Side panel */
         .side-panel {
             position: absolute;
-            width: 18%;
-            /* Changed from 20% */
+            width: 15%;
+            /* Reduced from 16% */
             top: 48px;
             left: 0;
             bottom: 0;
             background-color: white;
             padding: 20px;
             overflow-y: auto;
-            box-shadow: 2px 0 10px var(--shadow-color),
-                -1px 0 0 var(--shadow-color) inset;
-            /* Right shadow */
+            box-shadow: 2px 0 2px var(--shadow-color),
+                /* 3px width */
+                1px 0 1px var(--shadow-color) inset;
             transition: width 0.3s ease;
+        }
+
+        .panel-options-container {
+            margin-top: 5px;
+            /* Added 5px top margin */
         }
 
         .panel-option {
             margin-bottom: 15px;
             cursor: pointer;
             color: var(--purple-semidark);
+        }
+
+        .panel-option:first-child {
+            margin-top: 7px;
+            /* Increased from 2px to 7px (5px more) */
         }
 
         .panel-option.selected {
@@ -136,13 +151,11 @@
         .legend.active {
             display: block;
             max-height: 500px;
-            /* Adjust based on content */
             padding: 10px 15px;
         }
 
         .legend-item {
             margin-bottom: 15px;
-            /* Increased spacing */
             font-size: 14px;
         }
 
@@ -168,7 +181,8 @@
             <a href="#">About</a>
         </div>
         <div class="github-icon">
-            <a href="#"><img src="image/github-mark.png" alt="GitHub"></a>
+            <a href="https://github.com/Aprilmiaoyilee/casa0003_group.git" target="_blank"><img src="image/github-mark.png"
+                    alt="GitHub"></a>
         </div>
     </div>
 
@@ -177,30 +191,32 @@
 
     <!-- Side Panel -->
     <div class='side-panel'>
-        <div class="panel-option" onclick="toggleLegend(this, 'option1')">
-            <div class="panel-option-title">Accident Rate by LSOA</div>
-            <div class="legend" id="option1-legend">
-                <div class="legend-item">Legend1</div>
-                <div class="legend-item">Legend2</div>
-                <div class="legend-item">Legend3</div>
+        <div class="panel-options-container">
+            <div class="panel-option" onclick="toggleLegend(this, 'option1')">
+                <div class="panel-option-title">Accident Rate by LSOA</div>
+                <div class="legend" id="option1-legend">
+                    <div class="legend-item">Legend1</div>
+                    <div class="legend-item">Legend2</div>
+                    <div class="legend-item">Legend3</div>
+                </div>
             </div>
-        </div>
 
-        <div class="panel-option" onclick="toggleLegend(this, 'option2')">
-            <div class="panel-option-title">Accident Frequency of Roads</div>
-            <div class="legend" id="option2-legend">
-                <div class="legend-item">Legend1</div>
-                <div class="legend-item">Legend2</div>
-                <div class="legend-item">Legend3</div>
+            <div class="panel-option" onclick="toggleLegend(this, 'option2')">
+                <div class="panel-option-title">Accident Frequency of Roads</div>
+                <div class="legend" id="option2-legend">
+                    <div class="legend-item">Legend1</div>
+                    <div class="legend-item">Legend2</div>
+                    <div class="legend-item">Legend3</div>
+                </div>
             </div>
-        </div>
 
-        <div class="panel-option" onclick="toggleLegend(this, 'option3')">
-            <div class="panel-option-title">Individual Accident Points</div>
-            <div class="legend" id="option3-legend">
-                <div class="legend-item">Legend1</div>
-                <div class="legend-item">Legend2</div>
-                <div class="legend-item">Legend3</div>
+            <div class="panel-option" onclick="toggleLegend(this, 'option3')">
+                <div class="panel-option-title">Individual Accident Points</div>
+                <div class="legend" id="option3-legend">
+                    <div class="legend-item">Legend1</div>
+                    <div class="legend-item">Legend2</div>
+                    <div class="legend-item">Legend3</div>
+                </div>
             </div>
         </div>
 
@@ -209,15 +225,16 @@
     </div>
 
     <script>
-        // Map initialisation with higher zoom
+        // Map initialisation with precise center
         mapboxgl.accessToken = 'pk.eyJ1IjoiYWlsYWdyYW50MjMiLCJhIjoiY202ODRuZmFjMDl4OTJtcjNvNnY1anoydiJ9.IwkY6zSc0skaG5Rrsb_Bog';
 
         const map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/ailagrant23/cmacuf8q900p101qo71nrbjj8',
-            center: [-0.25, 51.2],
-            zoom: 9, // Increased from 8
-            pitch: 45 // Added for better 3D effect
+            center: [-0.12574, 51.50853], // Exact coordinates from reference
+            zoom: 9,
+            pitch: 0,
+            bearing: 0
         });
 
         // Toggle legend with animation and colour change
@@ -225,14 +242,12 @@
             const legend = document.getElementById(`${optionId}-legend`);
             const isActive = legend.classList.contains('active');
 
-            // Toggle active state
             element.classList.toggle('selected', !isActive);
             legend.classList.toggle('active', !isActive);
         };
 
         // Add map controls
         map.addControl(new mapboxgl.NavigationControl());
-        map.addControl(new mapboxgl.TerrainControl());
     </script>
 </body>
 
