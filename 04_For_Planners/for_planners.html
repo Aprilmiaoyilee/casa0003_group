@@ -9,8 +9,17 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&family=Nunito:wght@600&display=swap"
-        rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+    rel="stylesheet">
 
     <!-- Mapbox GL -->
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
@@ -19,8 +28,9 @@
     <style>
         /* Colour variables */
         :root {
-            --purple-dark: rgb(91, 57, 118);
-            --purple-semidark: rgb(197, 159, 221);
+            --purple-xdark: rgb(35, 24, 92);
+            --purple-dark: rgb(65, 48, 126);
+            --purple-semidark: rgb(147, 148, 200);
             --shadow-color: rgba(0, 0, 0, 0.05);
             /* 5% opacity */
         }
@@ -40,7 +50,7 @@
             left: 0;
             right: 0;
             height: 48px;
-            background-color: white;
+            background-color: rgb(255, 255, 255);
             display: flex;
             align-items: center;
             padding: 0 20px;
@@ -52,12 +62,12 @@
         }
 
         .nav-title {
-            font-family: 'Nunito', sans-serif;
-            font-weight: 600;
-            font-size: 20px;
+            font-family: 'Sansation', sans-serif;
+            font-weight: 750;
+            font-size: 21px;
             margin-right: 80px;
             /* Increased spacing */
-            color: var(--purple-dark);
+            color: var(--purple-xdark);
         }
 
         .nav-links {
@@ -72,6 +82,7 @@
             font-family: 'Mulish', sans-serif;
             /* Changed to body font */
             font-weight: 400;
+            font-size: 17px;
         }
 
         .nav-links a:hover {
@@ -83,8 +94,8 @@
         }
 
         .github-icon img {
-            height: 24px;
-            width: 24px;
+            height: 28px;
+            width: 28px;
         }
 
         /* Map container */
@@ -92,7 +103,7 @@
             position: absolute;
             top: 48px;
             bottom: 0;
-            width: 85%;
+            width: 100%;
             /* Adjusted for 15% side panel */
             right: 0;
         }
@@ -100,18 +111,47 @@
         /* Side panel */
         .side-panel {
             position: absolute;
-            width: 15%;
+            width: 17%;
             /* Reduced from 16% */
             top: 48px;
             left: 0;
             bottom: 0;
-            background-color: white;
-            padding: 20px;
+            background-color: rgba(232, 235, 247, 0.7);
+            padding: 15px 10px 15px 20px;
             overflow-y: auto;
             box-shadow: 2px 0 2px var(--shadow-color),
                 /* 3px width */
                 1px 0 1px var(--shadow-color) inset;
             transition: width 0.3s ease;
+        }
+
+        /* New section styles */
+        .explore-section {
+            margin-bottom: 20px;
+        }
+
+        .explore-title {
+            font-family: 'Rubik', sans-serif;
+            font-weight: 400;
+            font-size: 19px;
+            color: var(--purple-dark);
+            margin-bottom: 10px;
+        }
+
+        .explore-content-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 9px;
+            padding: 10px;
+            /* 5px less on sides */
+            width: calc(100% - 8px);
+            /* 5px less on both sides */
+            box-sizing: border-box;
+        }
+
+        .explore-content {
+            font-size: 14px;
+            color: var(--purple-dark);
+            line-height: 1.2;
         }
 
         .panel-options-container {
@@ -120,9 +160,12 @@
         }
 
         .panel-option {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             cursor: pointer;
             color: var(--purple-semidark);
+            display: flex;
+            align-items: flex-start;
+            /* Changed for better legend alignment */
         }
 
         .panel-option:first-child {
@@ -135,28 +178,64 @@
         }
 
         .panel-option-title {
-            font-family: 'Nunito', sans-serif;
-            font-weight: 600;
+            font-family: 'Rubik', sans-serif;
+            font-weight: 400;
+            margin-left: 10px;
+        }
+
+        .option-circle {
+            width: 7px;
+            /* Reduced by 15% from 12px */
+            height: 7px;
+            /* Reduced by 15% from 12px */
+            min-width: 7px;
+            /* Ensures circle stays round */
+            min-height: 7px;
+            /* Ensures circle stays round */
+            border-radius: 35%;
+            /* Perfect circle */
+            border: 2px solid var(--purple-semidark);
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin-top: 4px;
+            /* Better vertical alignment */
+        }
+
+        .panel-option.selected .option-circle {
+            background-color: var(--purple-dark);
+            border-color: var(--purple-dark);
         }
 
         .legend {
-            display: none;
-            margin-top: 10px;
-            padding-left: 15px;
+            margin-top: 0px;
+            padding-left: 24px;
+            /* Align with text */
             overflow: hidden;
             max-height: 0;
-            transition: max-height 0.3s ease, padding 0.3s ease;
+            width: 90%;
+            /* Full width */
+            opacity: 0;
+            transition: max-height 0.21s ease, padding 0.21s ease, opacity 0.21s ease;
+            /* 30% faster transition */
         }
 
         .legend.active {
-            display: block;
             max-height: 500px;
-            padding: 10px 15px;
+            padding: 10px 0 10px 24px;
+            margin-bottom: 0px;
+            opacity: 1;
+            /* Added smooth opacity transition */
+        }
+
+        .legend.closing {
+            transition: max-height 0.15s ease, padding 0.15s ease, opacity 0.15s ease;
+            /* 50% faster closing */
         }
 
         .legend-item {
-            margin-bottom: 15px;
+            margin-bottom: 6px;
             font-size: 14px;
+            line-height: 1.2;
         }
 
         .raw-data-link {
@@ -167,6 +246,78 @@
             font-size: 14px;
             text-decoration: none;
         }
+
+        /* Chart container styles - UPDATED FOR RESPONSIVENESS */
+        .chart-container {
+            position: absolute;
+            width: 24%;
+            /* Percentage-based width */
+            height: 30vh;
+            /* Viewport-based height */
+            background-color: rgba(255, 255, 255, 0.75);
+            border-radius: 8px;
+            box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
+            z-index: 5;
+            padding: 12px;
+            box-sizing: border-box;
+            overflow: hidden;
+            transition: top 0.2s ease, opacity 0.2s ease;
+            display: none;
+            /* Initially hidden */
+            right: 34px;
+            /* Fixed distance from right edge */
+            /* No fixed left position to allow responsiveness */
+        }
+
+        .chart-container.closing {
+            transition: top 0.2s ease, opacity 0.15s ease;
+        }
+
+        .chart-title {
+            font-family: 'Rubik', sans-serif;
+            font-weight: 400;
+            color: var(--purple-dark);
+            margin-bottom: 8px;
+            font-size: 17px;
+            text-align: left;
+        }
+
+        .chart-content {
+            height: calc(100% - 25px);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: var(--purple-dark);
+            font-size: 12px;
+        }
+
+        /* Charts stack container - UPDATED FOR RESPONSIVENESS */
+        .charts-stack {
+            position: absolute;
+            top: 60px;
+            /* Just below navigation bar */
+            right: 15px;
+            /* Right side of the map */
+            /* Calculate left position based on side panel */
+            left: calc(16% + 30px);
+            /* Side panel width + padding */
+            z-index: 5;
+        }
+
+        /* Media queries for better responsiveness */
+        @media (max-width: 1200px) {
+            .chart-container {
+                width: 75%;
+                /* Slightly narrower on smaller screens */
+            }
+        }
+
+        @media (max-width: 900px) {
+            .chart-container {
+                width: 70%;
+                /* Even narrower on even smaller screens */
+            }
+        }
     </style>
 </head>
 
@@ -175,47 +326,70 @@
     <div class="nav-bar">
         <div class="nav-title">London CycleNet</div>
         <div class="nav-links">
+            <a href="#">Start Here</a>
             <a href="#">Overview</a>
             <a href="#">For Students</a>
             <a href="#">For Planners</a>
-            <a href="#">About</a>
         </div>
         <div class="github-icon">
-            <a href="https://github.com/Aprilmiaoyilee/casa0003_group.git" target="_blank"><img src="image/github-mark.png"
-                    alt="GitHub"></a>
+            <a href="https://github.com/Aprilmiaoyilee/casa0003_group.git" target="_blank"><img
+                    src="image/github-mark.png" alt="GitHub"></a>
         </div>
     </div>
 
     <!-- Map Container -->
     <div id='map'></div>
 
+    <!-- Charts Stack Container -->
+    <div class="charts-stack" id="charts-stack"></div>
+
     <!-- Side Panel -->
     <div class='side-panel'>
+        <!-- New section -->
+        <div class="explore-section">
+            <div class="explore-title">Insights for planners</div>
+            <div class="explore-content-box">
+                <div class="explore-content">
+                    intro intro intro intro intro intro intro intro intro intro intro intro intro intro intro intro
+                    intro intro intro intro intro intro intro intro intro intro intro
+                </div>
+            </div>
+        </div>
+
         <div class="panel-options-container">
-            <div class="panel-option" onclick="toggleLegend(this, 'option1')">
-                <div class="panel-option-title">Accident Rate by LSOA</div>
-                <div class="legend" id="option1-legend">
-                    <div class="legend-item">Legend1</div>
-                    <div class="legend-item">Legend2</div>
-                    <div class="legend-item">Legend3</div>
+            <div class="panel-option" data-option-id="option1">
+                <span class="option-circle"></span>
+                <div class="panel-option-content">
+                    <div class="panel-option-title">Accident Rate by LSOA</div>
+                    <div class="legend" id="option1-legend">
+                        <div class="legend-item">Legend1</div>
+                        <div class="legend-item">Legend2</div>
+                        <div class="legend-item">Legend3</div>
+                    </div>
                 </div>
             </div>
 
-            <div class="panel-option" onclick="toggleLegend(this, 'option2')">
-                <div class="panel-option-title">Accident Frequency of Roads</div>
-                <div class="legend" id="option2-legend">
-                    <div class="legend-item">Legend1</div>
-                    <div class="legend-item">Legend2</div>
-                    <div class="legend-item">Legend3</div>
+            <div class="panel-option" data-option-id="option2">
+                <span class="option-circle"></span>
+                <div class="panel-option-content">
+                    <div class="panel-option-title">Accident Frequency of Roads</div>
+                    <div class="legend" id="option2-legend">
+                        <div class="legend-item">Legend1</div>
+                        <div class="legend-item">Legend2</div>
+                        <div class="legend-item">Legend3</div>
+                    </div>
                 </div>
             </div>
 
-            <div class="panel-option" onclick="toggleLegend(this, 'option3')">
-                <div class="panel-option-title">Individual Accident Points</div>
-                <div class="legend" id="option3-legend">
-                    <div class="legend-item">Legend1</div>
-                    <div class="legend-item">Legend2</div>
-                    <div class="legend-item">Legend3</div>
+            <div class="panel-option" data-option-id="option3">
+                <span class="option-circle"></span>
+                <div class="panel-option-content">
+                    <div class="panel-option-title">Individual Accident Points</div>
+                    <div class="legend" id="option3-legend">
+                        <div class="legend-item">Legend1</div>
+                        <div class="legend-item">Legend2</div>
+                        <div class="legend-item">Legend3</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -230,24 +404,107 @@
 
         const map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/ailagrant23/cmacuf8q900p101qo71nrbjj8',
+            style: 'mapbox://styles/ailagrant23/cmadpu5ig00ql01qog2hg6gwb',
             center: [-0.12574, 51.50853], // Exact coordinates from reference
-            zoom: 9,
+            zoom: 9.5,
             pitch: 0,
             bearing: 0
         });
 
-        // Toggle legend with animation and colour change
-        const toggleLegend = (element, optionId) => {
-            const legend = document.getElementById(`${optionId}-legend`);
-            const isActive = legend.classList.contains('active');
+        // Store active charts
+        const activeCharts = {};
 
-            element.classList.toggle('selected', !isActive);
-            legend.classList.toggle('active', !isActive);
+        // Calculate chart height and gap
+        const getChartHeight = () => window.innerHeight * 0.30; // 30% of viewport height
+        const chartGap = 5; // Gap between stacked charts - reduced to 2px
+
+        // Create chart element
+        const createChartElement = (optionId, title) => {
+            const chart = document.createElement('div');
+            chart.className = 'chart-container';
+            chart.id = `${optionId}-chart`;
+
+            chart.innerHTML = `
+                <div class="chart-title">Graph name</div>
+                <div class="chart-content">
+                </div>
+            `;
+
+            return chart;
         };
+
+        // Arrange all visible charts in the stack
+        const arrangeCharts = () => {
+            const chartElements = document.querySelectorAll('.chart-container');
+            const chartHeight = getChartHeight();
+
+            chartElements.forEach((chart, index) => {
+                chart.style.display = 'block';
+                chart.style.top = `${index * (chartHeight + chartGap)}px`;
+            });
+        };
+
+        // Toggle chart visibility
+        const toggleChart = (optionId) => {
+            const chartStack = document.getElementById('charts-stack');
+            const existingChart = document.getElementById(`${optionId}-chart`);
+
+            if (existingChart) {
+                // Add closing class for faster transition
+                existingChart.classList.add('closing');
+
+                // Remove chart after transition completes
+                setTimeout(() => {
+                    existingChart.remove();
+                    delete activeCharts[optionId];
+                    arrangeCharts();
+                }, 150); // Match the closing transition time (0.15s = 150ms)
+            } else {
+                // Create and add chart if it doesn't exist
+                const optionElement = document.querySelector(`[data-option-id="${optionId}"]`);
+                const title = optionElement.querySelector('.panel-option-title').textContent;
+
+                const newChart = createChartElement(optionId, title);
+                chartStack.prepend(newChart); // Add to the top of the stack
+                activeCharts[optionId] = true;
+
+                // Short delay to allow DOM update before animation
+                setTimeout(() => {
+                    newChart.style.display = 'block';
+                    arrangeCharts();
+                }, 10);
+            }
+        };
+
+        // Initialize panel options click events
+        document.querySelectorAll('.panel-option').forEach(option => {
+            option.addEventListener('click', function () {
+                const optionId = this.getAttribute('data-option-id');
+                const legend = document.getElementById(`${optionId}-legend`);
+
+                // If legend is active, add closing class for faster transition
+                if (legend.classList.contains('active')) {
+                    legend.classList.add('closing');
+                    setTimeout(() => {
+                        legend.classList.remove('active', 'closing');
+                        this.classList.remove('selected');
+                    }, 150); // Match the closing transition time (0.15s = 150ms)
+                } else {
+                    // Toggle selected state and legend visibility
+                    this.classList.add('selected');
+                    legend.classList.add('active');
+                }
+
+                // Toggle chart visibility
+                toggleChart(optionId);
+            });
+        });
 
         // Add map controls
         map.addControl(new mapboxgl.NavigationControl());
+
+        // Handle window resize to adjust chart positions
+        window.addEventListener('resize', arrangeCharts);
     </script>
 </body>
 
