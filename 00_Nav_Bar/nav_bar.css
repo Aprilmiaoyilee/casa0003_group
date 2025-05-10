@@ -1,0 +1,73 @@
+/* Colour variables */
+:root {
+  --purple-dark: rgb(91, 57, 118);
+  --purple-semidark: rgb(197, 159, 221);
+  --shadow-color: rgba(0, 0, 0, 0.05);
+  /* 5% opacity */
+}
+
+/* Navigation bar - top */
+.nav-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 100; /* Increased z-index to ensure it stays on top */
+  box-shadow: 0 1px 1px var(--shadow-color),
+    /* 3px width */ 0 1px 1px var(--shadow-color) inset;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.nav-title {
+  font-family: "Sansation", sans-serif;
+  font-weight: 750;
+  font-size: 21px;
+  margin-right: 80px;
+  color: var(--purple-xdark);
+}
+
+.nav-links {
+  display: flex;
+  gap: 60px;
+  /* Doubled spacing again (from 40px) */
+}
+
+.nav-links a {
+  color: var(--purple-dark);
+  text-decoration: none;
+  font-family: "Mulish", sans-serif;
+  /* Changed to body font */
+  font-weight: 400;
+  font-size: 17px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.github-icon {
+  margin-left: auto;
+}
+
+.github-icon img {
+  height: 24px;
+  width: 24px;
+}
+
+/* let Navigation bar stay at top across pages */
+#nav-placeholder {
+  position: relative;
+  z-index: 1000; /* Keep high z-index to stay on top */
+}
+
+@supports (position: sticky) {
+  #nav-placeholder {
+    position: sticky;
+    top: -1px;
+  }
+}
