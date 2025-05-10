@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>London CycleNet</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- Mapbox GL -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
+
+    <!-- Link to our CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+        <div class="nav-title">London CycleNet</div>
+        <div class="nav-links">
+            <a href="#">Start Here</a>
+            <a href="#">Overview</a>
+            <a href="#">For Students</a>
+            <a href="#">For Planners</a>
+        </div>
+        <div class="github-icon">
+            <a href="https://github.com/Aprilmiaoyilee/casa0003_group.git" target="_blank"><img
+                    src="image/github-mark.png" alt="GitHub"></a>
+        </div>
+    </div>
+
+    <!-- Map title -->
+    <div class="map-title">Cycle Safe Council here are more words for Miaoyi</div>
+
+    <!-- Map Container -->
+    <div id='map'></div>
+
+    <!-- Charts Stack Container -->
+    <div class="charts-stack" id="charts-stack"></div>
+
+    <div class='side-panel'>
+        <!-- Explanation text section (no border) -->
+        <div class="explore-section">
+            <div class="explore-content">
+                This is an introduction of how to use this map, legend or whatever we want to show to the users. What
+                should I write in the second sentence I don't know. Hope this is long enough for us to test. Maybe more
+                words I'm not sure.
+            </div>
+        </div>
+
+        <!-- Options container (with white background) -->
+        <div class="panel-options-container">
+            <div class="panel-option" data-option-id="option1">
+                <span class="option-circle"></span>
+                <div class="panel-option-content">
+                    <div class="panel-option-title">Accident Rate per LSOA</div>
+                    <div class="legend" id="option1-legend">
+                        <div class="legend-item explanatory">How this was calculated: formula formula formula ...</div>
+                        <div class="legend-item">Legend1</div>
+                        <div class="legend-item">Legend2</div>
+                        <div class="legend-item">Legend3</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-option" data-option-id="option2">
+                <span class="option-circle"></span>
+                <div class="panel-option-content">
+                    <div class="panel-option-title">Road Accident Rate</div>
+                    <div class="legend" id="option2-legend">
+                        <div class="legend-item">Legend1</div>
+                        <div class="legend-item">Legend2</div>
+                        <div class="legend-item">Legend3</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-option" data-option-id="option3">
+                <span class="option-circle"></span>
+                <div class="panel-option-content">
+                    <div class="panel-option-title">Accident Locations</div>
+                    <div class="legend" id="option3-legend">
+                        <div class="legend-item">Legend1</div>
+                        <div class="legend-item">Legend2</div>
+                        <div class="legend-item">Legend3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to our JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
