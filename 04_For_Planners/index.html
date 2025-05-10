@@ -17,6 +17,9 @@
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
 
+    <!-- D3 JS -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
     <!-- Link to our CSS file -->
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -38,7 +41,7 @@
     </div>
 
     <!-- Map title -->
-    <div class="map-title">Cycle Safe Council here are more words for Miaoyi</div>
+    <div class="map-title">Cycle Safe Council</div>
 
     <!-- Map Container -->
     <div id='map'></div>
@@ -64,9 +67,11 @@
                     <div class="panel-option-title">Accident Rate per LSOA</div>
                     <div class="legend" id="option1-legend">
                         <div class="legend-item explanatory">How this was calculated: formula formula formula ...</div>
-                        <div class="legend-item">Legend1</div>
-                        <div class="legend-item">Legend2</div>
-                        <div class="legend-item">Legend3</div>
+                        <div class="legend-item">0.0%</div>
+                        <div class="legend-item">0.1%-5.3%</div>
+                        <div class="legend-item">5.3%-11.7%</div>
+                        <div class="legend-item">11.7%-25.3%</div>
+                        <div class="legend-item">>25.3%</div>
                     </div>
                 </div>
             </div>
@@ -74,11 +79,14 @@
             <div class="panel-option" data-option-id="option2">
                 <span class="option-circle"></span>
                 <div class="panel-option-content">
-                    <div class="panel-option-title">Road Accident Rate</div>
+                    <div class="panel-option-title">Road Risk Level</div>
                     <div class="legend" id="option2-legend">
-                        <div class="legend-item">Legend1</div>
-                        <div class="legend-item">Legend2</div>
-                        <div class="legend-item">Legend3</div>
+                        <div class="legend-item">Very low</div>
+                        <div class="legend-item">Low</div>
+                        <div class="legend-item">Moderate</div>
+                        <div class="legend-item">Medium-High</div>
+                        <div class="legend-item">High</div>
+                        <div class="legend-item">Very High</div>
                     </div>
                 </div>
             </div>
@@ -88,9 +96,9 @@
                 <div class="panel-option-content">
                     <div class="panel-option-title">Accident Locations</div>
                     <div class="legend" id="option3-legend">
-                        <div class="legend-item">Legend1</div>
-                        <div class="legend-item">Legend2</div>
-                        <div class="legend-item">Legend3</div>
+                        <div class="legend-item">Fatal Injury</div>
+                        <div class="legend-item">Serious Injury</div>
+                        <div class="legend-item">Slight Injury</div>
                     </div>
                 </div>
             </div>
