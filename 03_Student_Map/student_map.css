@@ -1,0 +1,526 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
+}
+
+#map {
+  position: relative;
+  flex-grow: 1;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  margin-top: 48px; /* Add margin equal to navbar height */
+}
+
+.map-title {
+  position: absolute;
+  left: calc(17% + 38px);
+  /* Sidebar width + spacing */
+  top: 55px;
+  font-family: "Mulish", sans-serif;
+  font-size: 20px;
+  color: var(--purple-xdark);
+  z-index: 10;
+  padding: 0px 19px;
+  border-radius: 8px;
+  text-shadow: -0.8px -0.8px 0 white, 0.8px -0.8px 0 white, -0.8px 0.8px 0 white,
+    0.8px 0.8px 0 white;
+  /* Adding white outline */
+  opacity: 0.8;
+  font-weight: 670;
+}
+
+/* Custom .mapboxgl-popup styling */
+.mapboxgl-popup {
+  max-width: 400px;
+  font: 12px/20px "Mulish", sans-serif;
+}
+
+.mapboxgl-popup-content {
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.mapboxgl-popup-content h3 {
+  margin: 0 0 10px 0;
+  color: rgb(35, 24, 92);
+}
+
+.mapboxgl-popup-content p {
+  margin: 0;
+}
+
+/* left-panel on student map */
+#instructions {
+  position: absolute;
+  margin: 20px;
+  width: 20%; /* Increased width for more content */
+  top: 48px; /* Start below navigation bar */
+  bottom: 20%;
+  padding: 20px;
+  background-color: #fff;
+  overflow-y: auto; /* Changed to auto for better scrolling */
+  font-family: "Mulish", sans-serif;
+  z-index: 5; /* Above map content but below nav */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgb(65, 48, 126, 0.1);
+}
+
+#instructions #prompt,
+#instructions p:nth-child(2) {
+  font-weight: 800;
+}
+
+/* Styles for the nearest stations list */
+#instructions div {
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Legend styling */
+.map-legend {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  font-family: "Mulish", sans-serif;
+  font-size: 12px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.legend-color {
+  width: 20px;
+  height: 10px;
+  margin-right: 5px;
+}
+
+/* Isochrone legend colors
+.isochrone-5 {
+  background-color: #ff7700;
+}
+
+.isochrone-10 {
+  background-color: #ff9900;
+}
+
+.isochrone-15 {
+  background-color: #ffbb00;
+} */
+
+/* Cycle parking highlight */
+.cycle-parking-highlight {
+  background-color: #00ffff;
+  opacity: 0.3;
+  border: 2px dashed #00ffff;
+}
+
+/* Integrated styles for the combined page */
+
+/* Colour variables */
+:root {
+  --purple-xdark: rgb(35, 24, 92);
+  --purple-dark: rgb(65, 48, 126);
+  --purple-semidark: rgb(147, 148, 200);
+  --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Adjust map position to account for side panel */
+
+/* #map {
+  position: absolute;
+  top: 48px; 
+  bottom: 0;
+  right: 0;
+  width: 83%; 
+  left: 17%;
+  margin-top: 0; 
+} */
+
+/* Side panel styles */
+.side-panel {
+  position: absolute;
+  width: 18%;
+  top: 48px;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(232, 235, 247, 0.9);
+  padding: 15px;
+  overflow-y: auto;
+  box-shadow: 2px 0 2px var(--shadow-color), 1px 0 1px var(--shadow-color) inset;
+  transition: width 0.3s ease;
+}
+
+/* Chart container styles - SIGNIFICANTLY ENLARGED */
+.chart-container {
+  position: absolute;
+  width: 75%; /* Increased width */
+  height: 80vh; /* Increased height */
+  max-height: 600px; /* Added max height */
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+  padding: 20px; /* Increased padding */
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: top 0.2s ease, opacity 0.2s ease;
+  display: none; /* Initially hidden */
+  right: 20px; /* Fixed distance from right edge */
+  left: auto; /* Let right positioning control placement */
+  top: 80px; /* Further down from top */
+}
+
+.chart-container.closing {
+  transition: top 0.2s ease, opacity 0.15s ease;
+}
+
+.chart-container .chart-title {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  color: var(--purple-dark);
+  margin-bottom: 12px;
+  font-size: 18px;
+  text-align: left;
+}
+
+.chart-container .chart-content {
+  height: calc(100% - 30px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--purple-dark);
+  font-size: 14px;
+  width: 100%;
+}
+
+#university-chart-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible; /* Allow chart elements to overflow */
+}
+
+/* Charts stack container */
+.charts-stack {
+  position: absolute;
+  top: 60px; /* Just below navigation bar */
+  right: 15px; /* Right side of the map */
+  left: calc(17% + 10px); /* Side panel width + small padding */
+  z-index: 5;
+  height: calc(100vh - 80px); /* Almost full height */
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+.charts-stack > * {
+  pointer-events: auto; /* Restore pointer events for children */
+}
+
+/* Explore section */
+.explore-section {
+  margin-bottom: 20px;
+}
+
+.explore-title {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  color: var(--purple-dark);
+  margin-bottom: 10px;
+}
+
+.explore-content {
+  font-size: 14px;
+  color: var(--purple-dark);
+  line-height: 1.2;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+/* Panel options container */
+.panel-options-container {
+  margin-top: 5px;
+}
+
+.panel-option {
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: var(--purple-semidark);
+  display: flex;
+  align-items: flex-start;
+}
+
+.panel-option:first-child {
+  margin-top: 7px;
+}
+
+.panel-option.selected {
+  color: var(--purple-dark);
+}
+
+.panel-option-title {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  margin-left: 10px;
+  font-size: 15px; /* Increased size */
+}
+
+.option-circle {
+  width: 7px;
+  height: 7px;
+  min-width: 7px;
+  min-height: 7px;
+  border-radius: 35%;
+  border: 2px solid var(--purple-semidark);
+  display: inline-block;
+  transition: all 0.3s ease;
+  margin-top: 4px;
+}
+
+.panel-option.selected .option-circle {
+  background-color: var(--purple-dark);
+  border-color: var(--purple-dark);
+}
+
+.legend {
+  margin-top: 0px;
+  padding-left: 24px;
+  overflow: hidden;
+  max-height: 0;
+  width: 90%;
+  opacity: 0;
+  transition: max-height 0.21s ease, padding 0.21s ease, opacity 0.21s ease;
+}
+
+.legend.active {
+  max-height: 500px;
+  padding: 10px 0 10px 24px;
+  margin-bottom: 0px;
+  opacity: 1;
+}
+
+.legend.closing {
+  transition: max-height 0.15s ease, padding 0.15s ease, opacity 0.15s ease;
+}
+
+.legend-item {
+  margin-bottom: 6px;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* Instructions container - to hold the content from #instructions */
+#instructions-container {
+  margin: 15px 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 9px;
+  padding: 10px;
+  width: calc(100% - 8px);
+  box-sizing: border-box;
+  font-family: "Mulish", sans-serif;
+}
+
+/* University Chart Styles */
+
+/* Chart loading indicator */
+.chart-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-family: "Mulish", sans-serif;
+  font-size: 14px;
+  color: #666;
+}
+
+.chart-fallback-message {
+  color: #ff7700;
+  padding: 5px;
+  text-align: center;
+  font-family: "Mulish", sans-serif;
+  font-size: 12px;
+}
+
+/* Tooltip styling */
+.chart-tooltip {
+  position: absolute;
+  padding: 8px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  pointer-events: none;
+  font-family: "Mulish", sans-serif;
+  font-size: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  visibility: hidden;
+  transform: translate(
+    0,
+    -50%
+  ); /* Center vertically relative to the data point */
+  white-space: nowrap; /* Prevent text wrapping */
+  max-width: 250px; /* Limit maximum width */
+  transition: opacity 0.15s; /* Smooth show/hide transition */
+  opacity: 0.95; /* Slightly transparent */
+}
+
+/* University dot styling */
+.university-dot {
+  fill-opacity: 0.85;
+  stroke: white;
+  stroke-width: 1.5;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.university-dot:hover {
+  fill-opacity: 1;
+  r: 10; /* Slightly smaller than before (was 12) */
+  stroke-width: 2; /* Thicker border on hover */
+  stroke: #ffffff;
+  filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.3)); /* Add subtle shadow */
+}
+
+/* University label styling */
+.university-label {
+  font-family: "Mulish", sans-serif;
+  font-size: 11px;
+  fill: #333;
+  pointer-events: none;
+}
+
+/* Axis styling */
+.axis text {
+  font-family: "Mulish", sans-serif;
+  font-size: 12px;
+  fill: #333;
+}
+
+.axis-label {
+  font-family: "Mulish", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  text-anchor: middle;
+  fill: #333;
+}
+
+/* SVG chart title styling - override for university chart */
+svg .chart-title {
+  font-family: "Mulish", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  text-anchor: middle;
+  fill: #333;
+}
+
+.chart-subtitle {
+  font-family: "Mulish", sans-serif;
+  font-size: 14px;
+  fill: #666;
+  text-anchor: middle;
+}
+
+/* Grid styling */
+.grid line {
+  stroke: #e0e0e0;
+  stroke-opacity: 0.7;
+}
+
+.grid path {
+  stroke-width: 0;
+}
+
+/* Legend styling */
+.chart-legend {
+  font-family: "Mulish", sans-serif;
+  font-size: 12px;
+  fill: #333;
+}
+
+.legend-text-start {
+  text-anchor: start;
+}
+
+.legend-text-middle {
+  text-anchor: middle;
+}
+
+.legend-text-end {
+  text-anchor: end;
+}
+
+/* Close button for chart */
+.chart-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--purple-semidark);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 10;
+  transition: background-color 0.2s ease;
+}
+
+.chart-close-btn:hover {
+  background-color: var(--purple-dark);
+}
+
+/* Media queries for responsive design */
+@media (max-width: 1200px) {
+  .chart-container {
+    width: 70%; /* Adjusted for smaller screens */
+    height: 70vh;
+  }
+
+  #map {
+    width: 75%; /* Adjusted for side panel */
+    left: 25%;
+  }
+
+  .side-panel {
+    width: 25%;
+  }
+
+  .charts-stack {
+    left: calc(25% + 10px);
+  }
+}
+
+@media (max-width: 900px) {
+  .chart-container {
+    width: 75%; /* Even wider on smaller screens */
+    height: 60vh;
+  }
+}
+
+/* .side-panel {
+  border: 3px solid red !important;
+}
+
+#instructions-container {
+  border: 3px solid blue !important;
+}
+ */

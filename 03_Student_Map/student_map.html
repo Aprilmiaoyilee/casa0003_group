@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -15,13 +16,95 @@
     />
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.11.1/mapbox-gl.js"></script>
 
-    <!-- common setting -->
-    <link href="../common/map.css" rel="stylesheet" />
+    <!-- D3.js for university chart -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+   <!-- Google Fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link
+       href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+       rel="stylesheet">
+
+    <!-- - Common and your own CSS Files -->
+    <link href="student_map.css" rel="stylesheet" />
+    <!-- <link href="../common/integrated_styles.css" rel="stylesheet" /> -->
+    <link href="../00_Nav_Bar/nav_bar.css" rel="stylesheet" />
+
+    <!-- Common JavaScript Files -->
+    <script src="../00_Nav_Bar/nav_bar.js"></script>
+    <!-- <script src="../common/integrated_script.js"></script> -->
   </head>
 
   <body>
+    <div id="nav-placeholder"></div>
+    <!-- Navigation Bar avoid delay-->
+    <div class="nav-bar">
+      <div class="nav-title">London CycleNet</div>
+      <div class="nav-links">
+        <a href="#">Start Here</a>
+        <a href="#">Overview</a>
+        <a href="#">For Students</a>
+        <a href="#">For Planners</a>
+      </div>
+      <div class="github-icon">
+        <a
+          href="https://github.com/Aprilmiaoyilee/casa0003_group.git"
+          target="_blank"
+          ><img
+            src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
+            alt="GitHub"
+        /></a>
+      </div>
+    </div>
+
+     <!-- Map title -->
+    <div class="map-title">Two-Wheels to Campus: Accessibility by Bike</div>
     <div id="map"></div>
-    <div id="instructions"></div>
+
+    <!-- Charts Stack Container from partner's page -->
+    <div class="charts-stack" id="charts-stack"></div>
+
+  
+    <!-- Side Panel -->
+    <div class='side-panel'>
+      <!-- New section -->
+<!-- Explanation text section (no border) -->
+        <div class="explore-section">
+            <div class="explore-content">
+              Explore how well London cycle network connects universities to nearby tube stations using cycling isochrones, detailed routes, and local infrastructure like parking. Start from clicking any university and identify coverage gaps in the green cycle network.
+            </div>
+        </div>
+
+      <div class="panel-options-container">
+          <div class="panel-option" data-option-id="option1">
+              <span class="option-circle"></span>
+              <div class="panel-option-content">
+                  <div class="panel-option-title"> Click here to explore London University Cycling Accessibility</div>
+                  <div class="legend" id="option1-legend">
+                      <div class="legend-item">A scatter plot shows how far each university is from central
+                        London and how many tube stations are nearby by bike.</div>
+                    
+                  </div>
+              </div>
+          </div>
+
+
+  </div>
+
+
+    <!-- Instructions div content will be moved here by JavaScript -->
+    <div id="instructions-container"></div>
+
+    <!-- Keep the original instructions div for JavaScript reference -->
+    <div id="instructions" style="display: none"></div>
+
+    <div class="explore-section">
+      <div class="explore-content">
+          * Zoom level can influence calculation results.
+      </div>
+  </div>
+
     <script src="student_map_routing.js"></script>
   </body>
 </html>

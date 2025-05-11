@@ -11,8 +11,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log("Nav placeholder found");
 
-  // Modified: Use nav_bar.html instead of nav_bar_content.html
-  fetch("../00_Nav_Bar/nav_bar.html")
+  // Check if we're on the index page or a subpage
+  const path = window.location.pathname;
+  let navBarPath;
+
+  // If we're on index.html or the root path
+  if (path.endsWith("index.html") || path.endsWith("/") || path === "") {
+    navBarPath = "./00_Nav_Bar/nav_bar.html"; // Path from root
+  } else {
+    navBarPath = "../00_Nav_Bar/nav_bar.html"; // Path from subpages
+  }
+
+  console.log("Using nav bar path:", navBarPath);
+
+  fetch(navBarPath)
     .then((response) => {
       console.log("Fetch response status:", response.status);
       if (!response.ok) {
@@ -24,13 +36,30 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("Navigation html loaded");
 
       // Extract the navigation bar content
-      // We need to extract just the navigation bar part from the complete HTML document
       const parser = new DOMParser();
       const doc = parser.parseFromString(data, "text/html");
       const navBar = doc.querySelector(".nav-bar");
 
       if (navBar) {
         console.log("Navigation bar found in HTML");
+
+        // Adjust links based on current path
+        const links = navBar.querySelectorAll(".nav-links a");
+        const isRoot =
+          path.endsWith("index.html") || path.endsWith("/") || path === "";
+
+        if (isRoot) {
+          // If we're on the root page, change "../index.html" to "./index.html", etc.
+          links.forEach((link) => {
+            let href = link.getAttribute("href");
+            if (href.startsWith("../")) {
+              href = "." + href.substring(2); // Change "../" to "./"
+              link.setAttribute("href", href);
+            }
+          });
+        }
+        // For subpages, keep the "../" prefix as it is
+
         // Insert the navigation bar content
         navPlaceholder.innerHTML = navBar.outerHTML;
         console.log("Navigation bar content inserted");
@@ -67,10 +96,23 @@ function highlightCurrentPage() {
     const linkPath = link.getAttribute("href");
     console.log("Checking link:", linkPath);
 
-    // If the link href is in the current path
-    if (currentPath.includes(linkPath) && linkPath !== "#") {
+    // Extract the page name from the path for more reliable matching
+    const currentPageName = currentPath.split("/").pop();
+    const linkPageName = linkPath.split("/").pop();
+
+    // If the current path contains the link's path or page name
+    if (currentPath.includes(linkPageName)) {
       console.log("Match found, highlighting:", linkPath);
       // Add visual indication
+      link.style.fontWeight = "700";
+      link.style.textDecoration = "underline";
+    }
+
+    // Special case for index page
+    if (
+      (currentPath.endsWith("/") || currentPath.endsWith("index.html")) &&
+      linkPath.includes("index.html")
+    ) {
       link.style.fontWeight = "700";
       link.style.textDecoration = "underline";
     }

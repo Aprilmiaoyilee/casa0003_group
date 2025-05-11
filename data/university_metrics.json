@@ -1,0 +1,1307 @@
+[
+  {
+    "name": "Kingston University Halls of Residence Seething Wells",
+    "coordinates": [
+      -0.315436843139902,
+      51.39319843213037
+    ],
+    "distanceFromCenter": 18.4,
+    "stationsWithin15Min": 0
+  },
+  {
+    "name": "Kingston University",
+    "coordinates": [
+      -0.307810093588066,
+      51.405912355629304
+    ],
+    "distanceFromCenter": 17.0,
+    "stationsWithin15Min": 0
+  },
+  {
+    "name": "Kingston University",
+    "coordinates": [
+      -0.302614904271961,
+      51.403472067647236
+    ],
+    "distanceFromCenter": 16.9,
+    "stationsWithin15Min": 0
+  },
+  {
+    "name": "Kingston University",
+    "coordinates": [
+      -0.264271768550837,
+      51.42945443413422
+    ],
+    "distanceFromCenter": 13.0,
+    "stationsWithin15Min": 0
+  },
+  {
+    "name": "St Mary's University Twickenham",
+    "coordinates": [
+      -0.335885310171456,
+      51.43615138799091
+    ],
+    "distanceFromCenter": 16.7,
+    "stationsWithin15Min": 1
+  },
+  {
+    "name": "Mountview Academy of Theatre Arts Ltd",
+    "coordinates": [
+      -0.069877035699718,
+      51.4748738067839
+    ],
+    "distanceFromCenter": 5.3,
+    "stationsWithin15Min": 10
+  },
+  {
+    "name": "University of Greenwich",
+    "coordinates": [
+      -0.003977589848081,
+      51.4844661203985
+    ],
+    "distanceFromCenter": 8.8,
+    "stationsWithin15Min": 3
+  },
+  {
+    "name": "University of Sunderland",
+    "coordinates": [
+      -0.014822842362061,
+      51.500740301095405
+    ],
+    "distanceFromCenter": 7.6,
+    "stationsWithin15Min": 3
+  },
+  {
+    "name": "Goldsmiths College University of London",
+    "coordinates": [
+      -0.0353753863545,
+      51.47414393810785
+    ],
+    "distanceFromCenter": 7.2,
+    "stationsWithin15Min": 4
+  },
+  {
+    "name": "G S M London",
+    "coordinates": [
+      -0.010739279155253,
+      51.478062985439344
+    ],
+    "distanceFromCenter": 8.6,
+    "stationsWithin15Min": 2
+  },
+  {
+    "name": "University of Cumbria",
+    "coordinates": [
+      -0.024606304632815,
+      51.51105864366331
+    ],
+    "distanceFromCenter": 6.9,
+    "stationsWithin15Min": 11
+  },
+  {
+    "name": "Ravensbourne University London",
+    "coordinates": [
+      0.005681131235241,
+      51.50167908308066
+    ],
+    "distanceFromCenter": 9.0,
+    "stationsWithin15Min": 1
+  },
+  {
+    "name": "London Design & Engineering U T C",
+    "coordinates": [
+      0.060304433716435,
+      51.507292274806055
+    ],
+    "distanceFromCenter": 12.8,
+    "stationsWithin15Min": 0
+  },
+  {
+    "name": "University of East London",
+    "coordinates": [
+      0.064833483143851,
+      51.50757504221979
+    ],
+    "distanceFromCenter": 13.1,
+    "stationsWithin15Min": 0
+  },
+  {
+    "name": "University of Greenwich Avery Hill Students Union",
+    "coordinates": [
+      0.077987048262289,
+      51.44604714127614
+    ],
+    "distanceFromCenter": 15.6,
+    "stationsWithin15Min": 0
+  },
+  {
+    "name": "University of Greenwich",
+    "coordinates": [
+      0.080990894228615,
+      51.44618179185084
+    ],
+    "distanceFromCenter": 15.8,
+    "stationsWithin15Min": 0
+  },
+  {
+    "name": "Queen Mary University Electronics Lab",
+    "coordinates": [
+      -0.038565638951768,
+      51.52460211945084
+    ],
+    "distanceFromCenter": 6.2,
+    "stationsWithin15Min": 11
+  },
+  {
+    "name": "Cephtactics",
+    "coordinates": [
+      -0.015066270325063,
+      51.50375708847614
+    ],
+    "distanceFromCenter": 7.6,
+    "stationsWithin15Min": 4
+  },
+  {
+    "name": "U C L School of Management",
+    "coordinates": [
+      -0.019496335767428,
+      51.50493816278115
+    ],
+    "distanceFromCenter": 7.3,
+    "stationsWithin15Min": 7
+  },
+  {
+    "name": "Rose Bruford College",
+    "coordinates": [
+      0.107280088913967,
+      51.4393495772427
+    ],
+    "distanceFromCenter": 17.8,
+    "stationsWithin15Min": 0
+  },
+  {
+    "name": "University College of Osteopathy",
+    "coordinates": [
+      -0.094313054453671,
+      51.50008111673293
+    ],
+    "distanceFromCenter": 2.3,
+    "stationsWithin15Min": 40
+  },
+  {
+    "name": "London Anatomy Office",
+    "coordinates": [
+      -0.089603042457623,
+      51.502801247679294
+    ],
+    "distanceFromCenter": 2.5,
+    "stationsWithin15Min": 33
+  },
+  {
+    "name": "London School of Commerce & I T",
+    "coordinates": [
+      -0.065025402837864,
+      51.51561738397619
+    ],
+    "distanceFromCenter": 4.2,
+    "stationsWithin15Min": 26
+  },
+  {
+    "name": "Queen Marys University of London",
+    "coordinates": [
+      -0.06204175295027,
+      51.516638228019715
+    ],
+    "distanceFromCenter": 4.4,
+    "stationsWithin15Min": 24
+  },
+  {
+    "name": "University of Westminster School of Media Arts & Design",
+    "coordinates": [
+      -0.324354551728717,
+      51.57732142336853
+    ],
+    "distanceFromCenter": 15.8,
+    "stationsWithin15Min": 12
+  },
+  {
+    "name": "Fairfield School of Business",
+    "coordinates": [
+      -0.091082175224197,
+      51.37454326673172
+    ],
+    "distanceFromCenter": 15.0,
+    "stationsWithin15Min": 0
+  },
+  {
+    "name": "Spurgeon's College",
+    "coordinates": [
+      -0.086202674572016,
+      51.40643278188783
+    ],
+    "distanceFromCenter": 11.6,
+    "stationsWithin15Min": 0
+  },
+  {
+    "name": "St George's Hospital Medical School",
+    "coordinates": [
+      -0.173357574883076,
+      51.427986960237845
+    ],
+    "distanceFromCenter": 9.5,
+    "stationsWithin15Min": 8
+  },
+  {
+    "name": "Met Film School London",
+    "coordinates": [
+      -0.171275452007984,
+      51.459166779750156
+    ],
+    "distanceFromCenter": 6.3,
+    "stationsWithin15Min": 14
+  },
+  {
+    "name": "Kings College London - Western Education Centre",
+    "coordinates": [
+      -0.096021614515143,
+      51.46840935908948
+    ],
+    "distanceFromCenter": 4.8,
+    "stationsWithin15Min": 11
+  },
+  {
+    "name": "Apsley Business School",
+    "coordinates": [
+      -0.215155019728016,
+      51.460571041426114
+    ],
+    "distanceFromCenter": 8.2,
+    "stationsWithin15Min": 7
+  },
+  {
+    "name": "University of the Arts London",
+    "coordinates": [
+      -0.12923246902858,
+      51.490553453469644
+    ],
+    "distanceFromCenter": 2.0,
+    "stationsWithin15Min": 32
+  },
+  {
+    "name": "Boston University London",
+    "coordinates": [
+      -0.185225035692173,
+      51.49254833069852
+    ],
+    "distanceFromCenter": 4.5,
+    "stationsWithin15Min": 31
+  },
+  {
+    "name": "B I M M London",
+    "coordinates": [
+      -0.196575903240015,
+      51.479423327040415
+    ],
+    "distanceFromCenter": 5.9,
+    "stationsWithin15Min": 20
+  },
+  {
+    "name": "Intouniversity",
+    "coordinates": [
+      -0.209596971447273,
+      51.48672699110928
+    ],
+    "distanceFromCenter": 6.3,
+    "stationsWithin15Min": 26
+  },
+  {
+    "name": "University of Wales Trinity St David",
+    "coordinates": [
+      -0.109689215111456,
+      51.479817525459076
+    ],
+    "distanceFromCenter": 3.3,
+    "stationsWithin15Min": 20
+  },
+  {
+    "name": "Sir Simon Milton Westminster University Technical College",
+    "coordinates": [
+      -0.147426713079379,
+      51.48929553369769
+    ],
+    "distanceFromCenter": 2.6,
+    "stationsWithin15Min": 16
+  },
+  {
+    "name": "South Thames College",
+    "coordinates": [
+      -0.190051124187295,
+      51.45614865496686
+    ],
+    "distanceFromCenter": 7.3,
+    "stationsWithin15Min": 10
+  },
+  {
+    "name": "North London College",
+    "coordinates": [
+      -0.069715797936618,
+      51.59012645959114
+    ],
+    "distanceFromCenter": 9.9,
+    "stationsWithin15Min": 5
+  },
+  {
+    "name": "London Graduate School",
+    "coordinates": [
+      -0.063827934832102,
+      51.60671035265594
+    ],
+    "distanceFromCenter": 11.7,
+    "stationsWithin15Min": 2
+  },
+  {
+    "name": "London College of Fashion",
+    "coordinates": [
+      -0.054872282823101,
+      51.54112312383196
+    ],
+    "distanceFromCenter": 6.1,
+    "stationsWithin15Min": 8
+  },
+  {
+    "name": "Queen Mary University of London",
+    "coordinates": [
+      -0.038458524382262,
+      51.54989665507097
+    ],
+    "distanceFromCenter": 7.6,
+    "stationsWithin15Min": 6
+  },
+  {
+    "name": "University of East London",
+    "coordinates": [
+      0.002798233301375,
+      51.54342659872119
+    ],
+    "distanceFromCenter": 9.7,
+    "stationsWithin15Min": 10
+  },
+  {
+    "name": "Staffordshire University London",
+    "coordinates": [
+      -0.022268029986496,
+      51.54752261720792
+    ],
+    "distanceFromCenter": 8.3,
+    "stationsWithin15Min": 6
+  },
+  {
+    "name": "London College of Fashion",
+    "coordinates": [
+      -0.228109105066019,
+      51.50372541552503
+    ],
+    "distanceFromCenter": 7.2,
+    "stationsWithin15Min": 28
+  },
+  {
+    "name": "Brigham Young University Ltd",
+    "coordinates": [
+      -0.192317894584803,
+      51.51097591953794
+    ],
+    "distanceFromCenter": 4.7,
+    "stationsWithin15Min": 43
+  },
+  {
+    "name": "Richmond the American International University in London",
+    "coordinates": [
+      -0.189935689206678,
+      51.5012720724471
+    ],
+    "distanceFromCenter": 4.6,
+    "stationsWithin15Min": 34
+  },
+  {
+    "name": "Royal College of Art",
+    "coordinates": [
+      -0.17844887943143,
+      51.50135502994958
+    ],
+    "distanceFromCenter": 3.8,
+    "stationsWithin15Min": 37
+  },
+  {
+    "name": "Imperial College of Science Technology & Medicine",
+    "coordinates": [
+      -0.177297134925082,
+      51.49772208086608
+    ],
+    "distanceFromCenter": 3.8,
+    "stationsWithin15Min": 29
+  },
+  {
+    "name": "Imperial College of London",
+    "coordinates": [
+      -0.177071619801979,
+      51.499040500200316
+    ],
+    "distanceFromCenter": 3.8,
+    "stationsWithin15Min": 27
+  },
+  {
+    "name": "Pepperdine University",
+    "coordinates": [
+      -0.17364327756995,
+      51.499023137510726
+    ],
+    "distanceFromCenter": 3.5,
+    "stationsWithin15Min": 33
+  },
+  {
+    "name": "Sam Humphry Baker",
+    "coordinates": [
+      -0.176264971760331,
+      51.499396660442414
+    ],
+    "distanceFromCenter": 3.7,
+    "stationsWithin15Min": 27
+  },
+  {
+    "name": "Regent's University London",
+    "coordinates": [
+      -0.155634608726585,
+      51.52574637318112
+    ],
+    "distanceFromCenter": 2.9,
+    "stationsWithin15Min": 25
+  },
+  {
+    "name": "Afaq Training Ltd",
+    "coordinates": [
+      -0.1667689756373,
+      51.518229474245935
+    ],
+    "distanceFromCenter": 3.1,
+    "stationsWithin15Min": 45
+  },
+  {
+    "name": "Mayur University",
+    "coordinates": [
+      -0.16251082362409,
+      51.520027031823176
+    ],
+    "distanceFromCenter": 2.9,
+    "stationsWithin15Min": 42
+  },
+  {
+    "name": "Serenita Knowledge Management",
+    "coordinates": [
+      -0.159313349838733,
+      51.49745021731167
+    ],
+    "distanceFromCenter": 2.7,
+    "stationsWithin15Min": 39
+  },
+  {
+    "name": "The University Women's Club",
+    "coordinates": [
+      -0.150416967154978,
+      51.50722921015571
+    ],
+    "distanceFromCenter": 1.8,
+    "stationsWithin15Min": 45
+  },
+  {
+    "name": "Royal Academy of Music",
+    "coordinates": [
+      -0.151674718806028,
+      51.52349882993302
+    ],
+    "distanceFromCenter": 2.5,
+    "stationsWithin15Min": 44
+  },
+  {
+    "name": "New London Educational Trust",
+    "coordinates": [
+      -0.369374136730143,
+      51.46740284453414
+    ],
+    "distanceFromCenter": 17.5,
+    "stationsWithin15Min": 4
+  },
+  {
+    "name": "American International University in London",
+    "coordinates": [
+      -0.296304452226798,
+      51.45199379258376
+    ],
+    "distanceFromCenter": 13.4,
+    "stationsWithin15Min": 2
+  },
+  {
+    "name": "University of Roehampton",
+    "coordinates": [
+      -0.243320992382179,
+      51.44872121188479
+    ],
+    "distanceFromCenter": 10.5,
+    "stationsWithin15Min": 3
+  },
+  {
+    "name": "Digby Stuart College",
+    "coordinates": [
+      -0.243087035854493,
+      51.456694244205416
+    ],
+    "distanceFromCenter": 10.0,
+    "stationsWithin15Min": 2
+  },
+  {
+    "name": "University Roehampton",
+    "coordinates": [
+      -0.245341934200058,
+      51.45795100906587
+    ],
+    "distanceFromCenter": 10.0,
+    "stationsWithin15Min": 2
+  },
+  {
+    "name": "Roehampton University",
+    "coordinates": [
+      -0.246917068096815,
+      51.4551598458374
+    ],
+    "distanceFromCenter": 10.3,
+    "stationsWithin15Min": 1
+  },
+  {
+    "name": "Universty of West London",
+    "coordinates": [
+      -0.303385736808787,
+      51.506609563499936
+    ],
+    "distanceFromCenter": 12.4,
+    "stationsWithin15Min": 12
+  },
+  {
+    "name": "Muslim College",
+    "coordinates": [
+      -0.287313036986265,
+      51.51187051489183
+    ],
+    "distanceFromCenter": 11.3,
+    "stationsWithin15Min": 19
+  },
+  {
+    "name": "Brunel University London",
+    "coordinates": [
+      -0.472835488163666,
+      51.532839900057304
+    ],
+    "distanceFromCenter": 24.2,
+    "stationsWithin15Min": 1
+  },
+  {
+    "name": "U C F B",
+    "coordinates": [
+      -0.279642634172985,
+      51.55669386687461
+    ],
+    "distanceFromCenter": 12.0,
+    "stationsWithin15Min": 8
+  },
+  {
+    "name": "Alpha College",
+    "coordinates": [
+      -0.31359804727282,
+      51.58445474282716
+    ],
+    "distanceFromCenter": 15.6,
+    "stationsWithin15Min": 12
+  },
+  {
+    "name": "Middlesex University",
+    "coordinates": [
+      -0.228942281884739,
+      51.58983301577104
+    ],
+    "distanceFromCenter": 11.6,
+    "stationsWithin15Min": 7
+  },
+  {
+    "name": "Barnet Southgate College",
+    "coordinates": [
+      -0.200292988582177,
+      51.652374436957864
+    ],
+    "distanceFromCenter": 16.9,
+    "stationsWithin15Min": 3
+  },
+  {
+    "name": "London Studio Centre",
+    "coordinates": [
+      -0.176700259537989,
+      51.6128165072984
+    ],
+    "distanceFromCenter": 12.2,
+    "stationsWithin15Min": 8
+  },
+  {
+    "name": "Oak Hill Theological College",
+    "coordinates": [
+      -0.146622866794371,
+      51.64063345735536
+    ],
+    "distanceFromCenter": 14.8,
+    "stationsWithin15Min": 4
+  },
+  {
+    "name": "The London School of Jewish Studies",
+    "coordinates": [
+      -0.213739675272806,
+      51.58821411307704
+    ],
+    "distanceFromCenter": 10.8,
+    "stationsWithin15Min": 7
+  },
+  {
+    "name": "The Crest Academy",
+    "coordinates": [
+      -0.241990684764056,
+      51.56305147180821
+    ],
+    "distanceFromCenter": 10.2,
+    "stationsWithin15Min": 9
+  },
+  {
+    "name": "London School of Academics",
+    "coordinates": [
+      0.170823728647714,
+      51.51873711826871
+    ],
+    "distanceFromCenter": 20.5,
+    "stationsWithin15Min": 0
+  },
+  {
+    "name": "University of Westminster",
+    "coordinates": [
+      -0.143341533953619,
+      51.51679357981981
+    ],
+    "distanceFromCenter": 1.6,
+    "stationsWithin15Min": 51
+  },
+  {
+    "name": "Liysf",
+    "coordinates": [
+      -0.142379705037602,
+      51.51846898100229
+    ],
+    "distanceFromCenter": 1.7,
+    "stationsWithin15Min": 48
+  },
+  {
+    "name": "Medconnect Europe",
+    "coordinates": [
+      -0.141566090964677,
+      51.51367197289539
+    ],
+    "distanceFromCenter": 1.3,
+    "stationsWithin15Min": 50
+  },
+  {
+    "name": "U C L Department of Geography",
+    "coordinates": [
+      -0.134767041828369,
+      51.524867906426486
+    ],
+    "distanceFromCenter": 2.0,
+    "stationsWithin15Min": 49
+  },
+  {
+    "name": "Arts & Business College of London",
+    "coordinates": [
+      -0.127814157533864,
+      51.518300371626005
+    ],
+    "distanceFromCenter": 1.2,
+    "stationsWithin15Min": 56
+  },
+  {
+    "name": "Florida State University London Study Centre",
+    "coordinates": [
+      -0.128587143910436,
+      51.517728177438826
+    ],
+    "distanceFromCenter": 1.1,
+    "stationsWithin15Min": 55
+  },
+  {
+    "name": "Independent Higher Education",
+    "coordinates": [
+      -0.129063027583452,
+      51.51948035959793
+    ],
+    "distanceFromCenter": 1.3,
+    "stationsWithin15Min": 54
+  },
+  {
+    "name": "New College of the Humanities",
+    "coordinates": [
+      -0.13062169444045,
+      51.519433265956636
+    ],
+    "distanceFromCenter": 1.3,
+    "stationsWithin15Min": 52
+  },
+  {
+    "name": "Amity University",
+    "coordinates": [
+      -0.131121028008163,
+      51.519207410851024
+    ],
+    "distanceFromCenter": 1.3,
+    "stationsWithin15Min": 51
+  },
+  {
+    "name": "N Y U in London",
+    "coordinates": [
+      -0.128939280043448,
+      51.51933450212073
+    ],
+    "distanceFromCenter": 1.3,
+    "stationsWithin15Min": 54
+  },
+  {
+    "name": "Carolina Trust",
+    "coordinates": [
+      -0.128701769597917,
+      51.5191508588828
+    ],
+    "distanceFromCenter": 1.3,
+    "stationsWithin15Min": 54
+  },
+  {
+    "name": "U C L Mechanical Engineering",
+    "coordinates": [
+      -0.132192033244334,
+      51.52297443669736
+    ],
+    "distanceFromCenter": 1.7,
+    "stationsWithin15Min": 45
+  },
+  {
+    "name": "St Lawrence University",
+    "coordinates": [
+      -0.132613729415963,
+      51.52218079714188
+    ],
+    "distanceFromCenter": 1.7,
+    "stationsWithin15Min": 52
+  },
+  {
+    "name": "University College London",
+    "coordinates": [
+      -0.132398249105272,
+      51.52357123969273
+    ],
+    "distanceFromCenter": 1.8,
+    "stationsWithin15Min": 42
+  },
+  {
+    "name": "U C L Institute of Archaeology",
+    "coordinates": [
+      -0.131622371565461,
+      51.52491678736885
+    ],
+    "distanceFromCenter": 1.9,
+    "stationsWithin15Min": 45
+  },
+  {
+    "name": "U C L School of Public Policy",
+    "coordinates": [
+      -0.130265974151295,
+      51.52515956408709
+    ],
+    "distanceFromCenter": 1.9,
+    "stationsWithin15Min": 50
+  },
+  {
+    "name": "U C L European Insitute",
+    "coordinates": [
+      -0.131583715885811,
+      51.525297463306984
+    ],
+    "distanceFromCenter": 2.0,
+    "stationsWithin15Min": 44
+  },
+  {
+    "name": "C I E E Study Abroad London Ltd",
+    "coordinates": [
+      -0.12581754879963,
+      51.520588617458294
+    ],
+    "distanceFromCenter": 1.4,
+    "stationsWithin15Min": 50
+  },
+  {
+    "name": "University of London",
+    "coordinates": [
+      -0.127467156116429,
+      51.521136538998256
+    ],
+    "distanceFromCenter": 1.5,
+    "stationsWithin15Min": 53
+  },
+  {
+    "name": "U C L",
+    "coordinates": [
+      -0.120072604122262,
+      51.52323049060346
+    ],
+    "distanceFromCenter": 1.7,
+    "stationsWithin15Min": 50
+  },
+  {
+    "name": "Anglo Educational Services",
+    "coordinates": [
+      -0.117550037878265,
+      51.52113070022221
+    ],
+    "distanceFromCenter": 1.5,
+    "stationsWithin15Min": 51
+  },
+  {
+    "name": "University of London",
+    "coordinates": [
+      -0.13142063420834,
+      51.52209885049545
+    ],
+    "distanceFromCenter": 1.6,
+    "stationsWithin15Min": 51
+  },
+  {
+    "name": "University of London",
+    "coordinates": [
+      -0.130393001907623,
+      51.52184866682307
+    ],
+    "distanceFromCenter": 1.6,
+    "stationsWithin15Min": 51
+  },
+  {
+    "name": "The Warburg Institute",
+    "coordinates": [
+      -0.130622938153094,
+      51.52327318250656
+    ],
+    "distanceFromCenter": 1.7,
+    "stationsWithin15Min": 43
+  },
+  {
+    "name": "U C L Insitute of Education",
+    "coordinates": [
+      -0.127939341622545,
+      51.52297859319325
+    ],
+    "distanceFromCenter": 1.7,
+    "stationsWithin15Min": 53
+  },
+  {
+    "name": "London School of Hygiene & Tropical Medicine",
+    "coordinates": [
+      -0.130661413912642,
+      51.520926692726476
+    ],
+    "distanceFromCenter": 1.5,
+    "stationsWithin15Min": 51
+  },
+  {
+    "name": "School of Oriental & African Studies",
+    "coordinates": [
+      -0.129240978859104,
+      51.522347383758806
+    ],
+    "distanceFromCenter": 1.6,
+    "stationsWithin15Min": 47
+  },
+  {
+    "name": "University of London",
+    "coordinates": [
+      -0.131122632159602,
+      51.522687623724856
+    ],
+    "distanceFromCenter": 1.7,
+    "stationsWithin15Min": 45
+  },
+  {
+    "name": "Hult Business School",
+    "coordinates": [
+      -0.115080435534067,
+      51.52124392454922
+    ],
+    "distanceFromCenter": 1.6,
+    "stationsWithin15Min": 52
+  },
+  {
+    "name": "London School of Business & Finance",
+    "coordinates": [
+      -0.110664520576722,
+      51.517917515754796
+    ],
+    "distanceFromCenter": 1.5,
+    "stationsWithin15Min": 50
+  },
+  {
+    "name": "Notre Dame International University",
+    "coordinates": [
+      -0.130400835768103,
+      51.50828775607484
+    ],
+    "distanceFromCenter": 0.4,
+    "stationsWithin15Min": 53
+  },
+  {
+    "name": "London Metropolitan University",
+    "coordinates": [
+      -0.110354384714304,
+      51.551473249609046
+    ],
+    "distanceFromCenter": 4.9,
+    "stationsWithin15Min": 22
+  },
+  {
+    "name": "The Institute of Ismaili Studies",
+    "coordinates": [
+      -0.125006169426373,
+      51.53752695929829
+    ],
+    "distanceFromCenter": 3.3,
+    "stationsWithin15Min": 26
+  },
+  {
+    "name": "Short Courses and Professional Training at Central St Martins",
+    "coordinates": [
+      -0.124767845752065,
+      51.53595841759646
+    ],
+    "distanceFromCenter": 3.1,
+    "stationsWithin15Min": 25
+  },
+  {
+    "name": "U C L Ear Institute",
+    "coordinates": [
+      -0.119593217855096,
+      51.52926593878757
+    ],
+    "distanceFromCenter": 2.4,
+    "stationsWithin15Min": 44
+  },
+  {
+    "name": "B P P Professional Education",
+    "coordinates": [
+      -0.119544978520534,
+      51.531135658784386
+    ],
+    "distanceFromCenter": 2.6,
+    "stationsWithin15Min": 40
+  },
+  {
+    "name": "S O A S",
+    "coordinates": [
+      -0.114958881065279,
+      51.53011781486102
+    ],
+    "distanceFromCenter": 2.5,
+    "stationsWithin15Min": 44
+  },
+  {
+    "name": "University of the Arts London",
+    "coordinates": [
+      -0.116362751262316,
+      51.51776633841774
+    ],
+    "distanceFromCenter": 1.2,
+    "stationsWithin15Min": 55
+  },
+  {
+    "name": "The Strand Campus Kings College London",
+    "coordinates": [
+      -0.116227561688038,
+      51.51161312521943
+    ],
+    "distanceFromCenter": 0.7,
+    "stationsWithin15Min": 45
+  },
+  {
+    "name": "London School of Economics & Political Science",
+    "coordinates": [
+      -0.116945793186615,
+      51.514115648967916
+    ],
+    "distanceFromCenter": 0.9,
+    "stationsWithin15Min": 50
+  },
+  {
+    "name": "Queen Mary University of London",
+    "coordinates": [
+      -0.118872539364377,
+      51.51667352223746
+    ],
+    "distanceFromCenter": 1.0,
+    "stationsWithin15Min": 52
+  },
+  {
+    "name": "Medipathways",
+    "coordinates": [
+      -0.122625586010501,
+      51.51804478875763
+    ],
+    "distanceFromCenter": 1.1,
+    "stationsWithin15Min": 57
+  },
+  {
+    "name": "College of Global Studies - Arcadia University",
+    "coordinates": [
+      -0.121852603920539,
+      51.5178093952566
+    ],
+    "distanceFromCenter": 1.1,
+    "stationsWithin15Min": 53
+  },
+  {
+    "name": "King's College London",
+    "coordinates": [
+      -0.11257567286468,
+      51.50582603690744
+    ],
+    "distanceFromCenter": 0.9,
+    "stationsWithin15Min": 48
+  },
+  {
+    "name": "King's College London",
+    "coordinates": [
+      -0.112651568253047,
+      51.505035895854284
+    ],
+    "distanceFromCenter": 0.9,
+    "stationsWithin15Min": 50
+  },
+  {
+    "name": "Paris Dauphine International",
+    "coordinates": [
+      -0.108634500771603,
+      51.5320843362086
+    ],
+    "distanceFromCenter": 2.9,
+    "stationsWithin15Min": 46
+  },
+  {
+    "name": "City University of London",
+    "coordinates": [
+      -0.107218519592381,
+      51.52694464011884
+    ],
+    "distanceFromCenter": 2.4,
+    "stationsWithin15Min": 48
+  },
+  {
+    "name": "The City Law School",
+    "coordinates": [
+      -0.10309874850182,
+      51.5279032645809
+    ],
+    "distanceFromCenter": 2.7,
+    "stationsWithin15Min": 42
+  },
+  {
+    "name": "Anglia Ruskin University London",
+    "coordinates": [
+      -0.105939362437074,
+      51.51851578184949
+    ],
+    "distanceFromCenter": 1.7,
+    "stationsWithin15Min": 49
+  },
+  {
+    "name": "Guildhall School of Music & Drama",
+    "coordinates": [
+      -0.092348273148737,
+      51.51951848068568
+    ],
+    "distanceFromCenter": 2.6,
+    "stationsWithin15Min": 40
+  },
+  {
+    "name": "Barts Cancer Institute",
+    "coordinates": [
+      -0.100023678061822,
+      51.52246684247039
+    ],
+    "distanceFromCenter": 2.3,
+    "stationsWithin15Min": 40
+  },
+  {
+    "name": "Wolfson Institute of Preventive Medicine",
+    "coordinates": [
+      -0.099379170879401,
+      51.52236646750323
+    ],
+    "distanceFromCenter": 2.4,
+    "stationsWithin15Min": 41
+  },
+  {
+    "name": "London College of Creative Media",
+    "coordinates": [
+      -0.102267196016673,
+      51.50342410107173
+    ],
+    "distanceFromCenter": 1.6,
+    "stationsWithin15Min": 41
+  },
+  {
+    "name": "London College of Communication",
+    "coordinates": [
+      -0.10181831206356,
+      51.49491507321947
+    ],
+    "distanceFromCenter": 2.1,
+    "stationsWithin15Min": 38
+  },
+  {
+    "name": "London South Bank University",
+    "coordinates": [
+      -0.101742873391868,
+      51.49870610046984
+    ],
+    "distanceFromCenter": 1.9,
+    "stationsWithin15Min": 44
+  },
+  {
+    "name": "The College of Contemporary Health",
+    "coordinates": [
+      -0.101333389032269,
+      51.496876639303046
+    ],
+    "distanceFromCenter": 2.0,
+    "stationsWithin15Min": 43
+  },
+  {
+    "name": "S A E Education Ltd",
+    "coordinates": [
+      -0.077035392564112,
+      51.53727865461677
+    ],
+    "distanceFromCenter": 4.6,
+    "stationsWithin15Min": 21
+  },
+  {
+    "name": "The University of Chicago Booth School of Business",
+    "coordinates": [
+      -0.090795434159649,
+      51.51618658123717
+    ],
+    "distanceFromCenter": 2.5,
+    "stationsWithin15Min": 43
+  },
+  {
+    "name": "The University of Law",
+    "coordinates": [
+      -0.089633334490861,
+      51.52170446288225
+    ],
+    "distanceFromCenter": 2.9,
+    "stationsWithin15Min": 39
+  },
+  {
+    "name": "Bayes Business School",
+    "coordinates": [
+      -0.090395796616976,
+      51.52208558620626
+    ],
+    "distanceFromCenter": 2.8,
+    "stationsWithin15Min": 37
+  },
+  {
+    "name": "BPP",
+    "coordinates": [
+      -0.085839518115248,
+      51.51695738566517
+    ],
+    "distanceFromCenter": 2.9,
+    "stationsWithin15Min": 39
+  },
+  {
+    "name": "National Centre for Circus Arts",
+    "coordinates": [
+      -0.082550231253231,
+      51.527558143784894
+    ],
+    "distanceFromCenter": 3.6,
+    "stationsWithin15Min": 30
+  },
+  {
+    "name": "Coventry University London Campus",
+    "coordinates": [
+      -0.078468685743105,
+      51.517772001152146
+    ],
+    "distanceFromCenter": 3.4,
+    "stationsWithin15Min": 28
+  },
+  {
+    "name": "Central Film School",
+    "coordinates": [
+      -0.070846351539373,
+      51.51713058463268
+    ],
+    "distanceFromCenter": 3.9,
+    "stationsWithin15Min": 28
+  },
+  {
+    "name": "Istituto Marangoni Ltd",
+    "coordinates": [
+      -0.072646631339755,
+      51.51829058955887
+    ],
+    "distanceFromCenter": 3.8,
+    "stationsWithin15Min": 29
+  },
+  {
+    "name": "University of Westminster",
+    "coordinates": [
+      -0.141079136907797,
+      51.51819658230312
+    ],
+    "distanceFromCenter": 1.6,
+    "stationsWithin15Min": 50
+  },
+  {
+    "name": "University of Westminster - Wells Street Campus",
+    "coordinates": [
+      -0.138270888115408,
+      51.51778334476964
+    ],
+    "distanceFromCenter": 1.4,
+    "stationsWithin15Min": 48
+  },
+  {
+    "name": "London Film School",
+    "coordinates": [
+      -0.125514877830431,
+      51.51356944587055
+    ],
+    "distanceFromCenter": 0.6,
+    "stationsWithin15Min": 49
+  },
+  {
+    "name": "UK University Search",
+    "coordinates": [
+      -0.097281832455923,
+      51.55053332588898
+    ],
+    "distanceFromCenter": 5.1,
+    "stationsWithin15Min": 15
+  }
+]
