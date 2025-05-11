@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London CycleNet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;670&family=Rubik:wght@400;440&display=swap" rel="stylesheet">
+
+    <!-- Navigation bar CSS -->
+    <link rel="stylesheet" href="../00_Nav_Bar/nav_bar.css">
+    <!-- Navigation bar JS -->
+    <script defer src="../00_Nav_Bar/nav_bar.js"></script>
+
+    <style>
+        :root {
+            --purple-xdark: rgb(41, 33, 82);
+            --purple-dark: rgb(75, 60, 128);
+            --purple-semidark: rgb(157, 157, 200);
+            --shadow-color: rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Mulish', sans-serif;
+            font-weight: 400;
+            background-color: #f6f6f9;
+        }
+
+        .hero {
+            background: linear-gradient(to right, var(--purple-xdark), var(--purple-dark));
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .content-section {
+            padding: 60px 40px;
+            max-width: 1000px;
+            margin: auto;
+            color: var(--purple-xdark);
+        }
+
+        .content-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--purple-dark);
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 18px;
+            margin: 30px 0;
+            padding-left: 20px;
+            border-left: 4px solid var(--purple-dark);
+            color: var(--purple-dark);
+        }
+
+        .policy-boxes {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .policy-box {
+            flex: 1;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            min-height: 150px;
+        }
+
+        table.dataset-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .dataset-table th,
+        .dataset-table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        .dataset-table th {
+            background-color: var(--purple-semidark);
+            color: #fff;
+            text-align: left;
+        }
+
+        .dataset-table td a {
+            color: var(--purple-dark);
+            word-break: break-word;
+        }
+
+        footer {
+            background-color: var(--purple-xdark);
+            color: white;
+            padding: 20px 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+<!-- Nav placeholder -->
+<div id="nav-placeholder"></div>
+
+<section class="hero">
+    <h1>Welcome to London CycleNet</h1>
+    <p>An interactive platform exploring how cycle networks improve urban connectivity and promote low-carbon, active travel across London.</p>
+</section>
+
+<section class="content-section" id="overview">
+    <h2>What is London CycleNet?</h2>
+    <p>London CycleNet brings together multiple datasets in one place, including: cycle networks, bicycle parking, university locations, Underground stations, and bicycle accident data. It helps students assess bike accessibility to their universities, supports the GLA in analysing accident trends, and visualises reachability within 15-minute rides.</p>
+
+    <h2>A Cycling Culture Growing</h2>
+    <p>London’s cycle network is rapidly expanding. The Mayor's Cycling Action Plan aims to make cycling safer and more connected, encouraging active travel for all Londoners.</p>
+
+    <div class="quote">
+        “THE LONDON PLAN IS PART OF REALISING THAT VISION, AND OF REVOLUTIONISING THE WAY WE GET AROUND OUR CITY – ENABLING A BOOM IN ACTIVE TRAVEL, WITH WALKING AND CYCLING BECOMING THE PRIMARY, DEFAULT CHOICE FOR MILLIONS OF LONDONERS BECAUSE WE HAVE MADE IT FAR EASIER AND SAFER.” <br><em>(The London Plan 2021, p.14)</em>
+    </div>
+</section>
+
+<section class="content-section" id="policies">
+    <h2>Key Policies</h2>
+    <div class="policy-boxes">
+        <div class="policy-box">[Policy 1]</div>
+        <div class="policy-box">[Policy 2]</div>
+        <div class="policy-box">[Policy 3]</div>
+    </div>
+</section>
+
+<section class="content-section" id="datasets">
+    <h2>Datasets Used</h2>
+    <table class="dataset-table">
+        <thead>
+        <tr>
+            <th>Dataset Name</th>
+            <th>Timeframe</th>
+            <th>Source</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Cycle Network for London</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Bicycle Parking</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Universities</td>
+            <td>March 2025</td>
+            <td>
+                Accessed via Digimap OS Student License:<br>
+                <a href="https://digimap.edina.ac.uk/os">https://digimap.edina.ac.uk/os</a><br>
+                <a href="https://www.ordnancesurvey.co.uk/products/points-of-interest">Ordnance Survey POI</a>
+            </td>
+        </tr>
+        <tr>
+            <td>Underground Tube Stations</td>
+            <td>March 2025</td>
+            <td>
+                Accessed via Digimap OS Student License:<br>
+                <a href="https://digimap.edina.ac.uk/os">https://digimap.edina.ac.uk/os</a><br>
+                <a href="https://www.ordnancesurvey.co.uk/products/points-of-interest">Ordnance Survey POI</a>
+            </td>
+        </tr>
+        <tr>
+            <td>Road Accidents</td>
+            <td>2018 - 2023</td>
+            <td><a href="https://data.london.gov.uk/dataset/recorded_crime_summary">London Data Portal</a></td>
+        </tr>
+        <tr>
+            <td>Greater London Authority (GLA) Boundary</td>
+            <td>N/A</td>
+            <td><a href="https://data.london.gov.uk/download/statistical-gis-boundary-files-london/114d1137-e339-4b50-b409-124c17f4b59a/gla.zip">GLA Boundary Zip</a></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+<footer>
+    &copy; 2025 London CycleNet | Designed with purpose and purple.
+</footer>
+</body>
+
+</html>
