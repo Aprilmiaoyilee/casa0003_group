@@ -682,8 +682,8 @@ map.on('load', () => {
         // Create HTML content for the popup
         const html = `
             <div style="font-family: 'Mulish', sans-serif; color: var(--purple-dark);">
-                <div style="font-weight: bold; margin-bottom: 3px;">${name}</div>
-                <div style="font-size: 13px; margin-bottom: 2px;">Length: ${length}</div>
+                <div style="font-weight: bold; margin-bottom: -1;">${name}</div>
+                <div style="font-size: 13px; margin-bottom: -1;">Length: ${length}</div>
                 <div style="font-size: 13px;">Accidents: ${accidents}</div>
             </div>
         `;
