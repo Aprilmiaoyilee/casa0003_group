@@ -1,0 +1,212 @@
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
+}
+
+/* Color variables */
+:root {
+  --purple-xdark: rgb(41, 33, 82);
+  --purple-dark: rgb(75, 60, 128);
+  --purple-semidark: rgb(157, 157, 200);
+  --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Map container - exactly like student_map.css */
+#map {
+  position: relative;
+  flex-grow: 1;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  margin-top: 48px; /* Add margin equal to navbar height */
+}
+/* Map title style */
+.map-title {
+  position: absolute;
+  left: calc(17% + 38px); /* Sidebar width + spacing */
+  top: 55px;
+  font-family: "Mulish", sans-serif;
+  font-size: 20px;
+  color: var(--purple-xdark);
+  z-index: 10;
+  padding: 0px 19px;
+  border-radius: 8px;
+  text-shadow: -0.8px -0.8px 0 white, 0.8px -0.8px 0 white, -0.8px 0.8px 0 white,
+    0.8px 0.8px 0 white; /* White outline */
+  opacity: 0.8;
+  font-weight: 670;
+}
+
+/* Side panel - positioned on top of the map */
+.side-panel {
+  position: absolute;
+  width: 18%;
+  top: 48px; /* Start below navbar */
+  left: 0;
+  bottom: 0;
+  background-color: rgba(232, 235, 247, 0.77);
+  padding: 15px;
+  overflow-y: auto;
+  box-shadow: 2px 0 2px var(--shadow-color), 1px 0 1px var(--shadow-color) inset;
+  transition: width 0.3s ease;
+  z-index: 5; /* Above map but below Mapbox attribution */
+}
+
+/* Panel options container - white background box */
+.panel-options-container {
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 9px;
+  padding: 12px;
+  margin-top: -5px;
+  margin-bottom: 15px;
+}
+
+/* Panel title */
+.toggle-layers-title {
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  color: var(--purple-dark);
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+/* Explanation section */
+.explore-section {
+  margin-bottom: 20px;
+}
+
+.explore-content {
+  font-size: 14px;
+  color: var(--purple-dark);
+  line-height: 1.2;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+/* Panel option styles */
+.panel-option {
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: var(--purple-semidark);
+  display: flex;
+  align-items: flex-start;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(157, 157, 200, 0.2);
+}
+
+.panel-option:last-child {
+  border-bottom: none;
+}
+
+.panel-option.selected {
+  color: var(--purple-dark);
+}
+
+.panel-option-title {
+  font-family: "Rubik", sans-serif;
+  font-weight: 440;
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.panel-option-content {
+  flex-grow: 1;
+}
+
+/* Toggle circle indicator */
+.option-circle {
+  width: 7px;
+  height: 7px;
+  min-width: 7px;
+  min-height: 7px;
+  border-radius: 35%;
+  border: 2px solid var(--purple-semidark);
+  display: inline-block;
+  transition: all 0.3s ease;
+  margin-top: 4px;
+}
+
+.panel-option.selected .option-circle {
+  background-color: var(--purple-dark);
+  border-color: var(--purple-dark);
+}
+
+/* Raw data link */
+.raw-data-link {
+  position: absolute;
+  bottom: 25px;
+  left: 20px;
+  color: var(--purple-semidark);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* Map legend - fixed position */
+.map-legend {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 20;
+  font-family: "Mulish", sans-serif;
+  font-size: 12px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.legend-key {
+  width: 14px;
+  height: 14px;
+  margin-right: 8px;
+}
+
+/* Panel options container - white background box */
+.panel-options-container {
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 9px;
+  padding: 12px;
+  margin-top: -5px;
+  margin-bottom: 15px;
+}
+
+/* Title for toggle layers section - if needed */
+.toggle-layers-title {
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  color: var(--purple-dark);
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+/* Mapbox logo problem */
+#map {
+  overflow: visible !important;
+}
+
+.mapboxgl-ctrl-bottom-left,
+.mapboxgl-ctrl {
+  z-index: 20 !important;
+  position: relative !important;
+}
+.mapboxgl-ctrl-bottom-left {
+  position: fixed !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  z-index: 99 !important;
+}

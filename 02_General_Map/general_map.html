@@ -1,183 +1,223 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8"/>
-    <title>Mapbox Layer Toggle + Legend</title>
-    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"/>
-
-    <!-- Mapbox GL JS CSS -->
-    <link
-            href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css"
-            rel="stylesheet"
+  <head>
+    <meta charset="utf-8" />
+    <title>02_General_Map</title>
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
     />
-    <!-- Mapbox GL JS -->
-    <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-        #map {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 100%;
-        }
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
 
-        /* Sidebar Container */
-        #menu {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 240px;
-            background-color: #FFFBCA; /* light yellow */
-            border: 2px solid #4635B1; /* dark purple */
-            border-radius: 8px;
-            padding: 12px;
-            font-family: sans-serif;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            max-height: 80%;
-            overflow-y: auto;
-        }
-        #menu h4 {
-            margin: 0 0 10px;
-            font-size: 16px;
-            color: #4635B1;
-            text-align: center;
-        }
-        .layer-toggle {
-            display: flex;
+    <!-- Mapbox -->
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v3.11.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.11.1/mapbox-gl.js"></script>
+
+    <!-- Load Navigation Bar CSS first -->
+    <link href="../00_Nav_Bar/nav_bar.css" rel="stylesheet" />
+
+    <!-- Then load map-specific CSS -->
+    <link href="general_map.css" rel="stylesheet" />
+
+    <!-- Navigation Bar JavaScript -->
+    <script src="../00_Nav_Bar/nav_bar.js"></script>
+  </head>
+
+  <body>
+    <!-- Navigation Bar Placeholder -->
+    <div id="nav-placeholder"></div>
+    <!-- Navigation Bar avoid delay-->
+    <div class="nav-bar">
+      <div class="nav-title">London CycleNet</div>
+      <div class="nav-links">
+        <a href="#">Start Here</a>
+        <a href="#">Overview</a>
+        <a href="#">For Students</a>
+        <a href="#">For Planners</a>
+      </div>
+      <div class="github-icon">
+        <a
+          href="https://github.com/Aprilmiaoyilee/casa0003_group.git"
+          target="_blank"
+          ><img
+            src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
+            alt="GitHub"
+        /></a>
+      </div>
+    </div>
+
+    <!-- Map Title -->
+    <div class="map-title">CycleScope: Your Complete Network Snapshot</div>
+
+    <!-- Map Container -->
+    <div id="map"></div>
+
+    <!-- Side Panel -->
+    <div class="side-panel">
+      <!-- Explanation Section -->
+      <div class="explore-section">
+        <div class="explore-content">
+          Explore London CycleNet application data — routes, parking, accident
+          hotspots, tube stations and universities—all in one place. Use the
+          layer toggles in the sidebar to switch each dataset on or off and
+          customise your view.
+        </div>
+      </div>
+
+      <!-- Toggle Layers Title -->
+      <h4 class="toggle-layers-title">Toggle Layers</h4>
+
+      <!-- Panel Options Container with white background - just adding container, not changing functionality -->
+      <div class="panel-options-container">
+        <!-- Current layer toggles without modification -->
+        <div
+          class="panel-option"
+          data-option-id="cycle-network-intersected-4326"
+          data-layer-type="line"
+        >
+          <span class="option-circle"></span>
+          <div class="panel-option-content">
+            <div class="panel-option-title">Cycle Network</div>
+          </div>
+        </div>
+
+        <div
+          class="panel-option"
+          data-option-id="cycle-parking-4326"
+          data-layer-type="symbol"
+        >
+          <span class="option-circle"></span>
+          <div class="panel-option-content">
+            <div class="panel-option-title">Cycle Parking</div>
+          </div>
+        </div>
+
+        <div
+          class="panel-option"
+          data-option-id="accident-2018-2023-4326"
+          data-layer-type="circle"
+        >
+          <span class="option-circle"></span>
+          <div class="panel-option-content">
+            <div class="panel-option-title">Accidents (2018–2023)</div>
+          </div>
+        </div>
+
+        <div
+          class="panel-option"
+          data-option-id="underground-tube-stations-4326"
+          data-layer-type="symbol"
+        >
+          <span class="option-circle"></span>
+          <div class="panel-option-content">
+            <div class="panel-option-title">Tube Stations</div>
+          </div>
+        </div>
+
+        <div
+          class="panel-option"
+          data-option-id="higher-education-establishments-4326"
+          data-layer-type="symbol"
+        >
+          <span class="option-circle"></span>
+          <div class="panel-option-content">
+            <div class="panel-option-title">Universities</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map Legend -->
+    <div class="map-legend">
+      <div style="font-weight: bold; margin-bottom: 5px">Map Legend</div>
+
+      <div class="legend-item">
+        <span
+          class="legend-key"
+          style="background: #fad66b; border-radius: 2px"
+        ></span>
+        <span>Cycle Network</span>
+      </div>
+
+      <div class="legend-item">
+        <span
+          class="legend-key"
+          style="background: #f56632; border-radius: 50%"
+        ></span>
+        <span>Accidents</span>
+      </div>
+
+      <div class="legend-item">
+        <span
+          class="legend-key"
+          style="
+            display: inline-flex;
             align-items: center;
-            margin: 8px 0;
-        }
-        .layer-toggle input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
-            accent-color: #4635B1;
-            cursor: pointer;
-        }
-        .layer-toggle label {
-            margin-left: 8px;
-            font-size: 14px;
-            color: #4635B1;
-            cursor: pointer;
-        }
+            justify-content: center;
+            font-size: 10px;
+          "
+        >
+          <img
+            src="../img/noun-london-underground-1-01.jpg"
+            width="14"
+            height="14"
+            alt="Tube icon"
+          />
+        </span>
+        <span>Tube Stations</span>
+      </div>
 
-        /* Legend Container */
-        #legend {
-            position: absolute;
-            bottom: 30px;
-            left: 20px;
-            background-color: #FFFBCA; /* light yellow */
-            border: 2px solid #4635B1; /* dark purple */
-            border-radius: 8px;
-            padding: 12px;
-            font-family: sans-serif;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            font-size: 14px;
-            max-width: 200px;
-        }
-        .legend-row {
-            display: flex;
+      <div class="legend-item">
+        <span
+          class="legend-key"
+          style="
+            display: inline-flex;
             align-items: center;
-            margin-bottom: 8px;
-        }
-        .legend-key {
-            width: 14px;
-            height: 14px;
-            margin-right: 8px;
-            flex-shrink: 0;
-        }
-        .legend-label {
-            line-height: 14px;
-            color: #4635B1;
-        }
-    </style>
-</head>
+            justify-content: center;
+            font-size: 10px;
+          "
+        >
+          <img
+            src="../img/graduate.jpg"
+            width="14"
+            height="14"
+            alt="University icon"
+          />
+        </span>
+        <span>Universities</span>
+      </div>
 
-<body>
-<div id="map"></div>
-
-<!-- Sidebar -->
-<div id="menu">
-    <h4>Toggle Layers</h4>
-    <!-- checkboxes injected here -->
-</div>
-
-<!-- Legend -->
-<div id="legend">
-    <div class="legend-row">
-        <span class="legend-key" style="background: #4CAF50; border-radius:2px;"></span>
-        <span class="legend-label">Cycle Network</span>
+      <div class="legend-item">
+        <span
+          class="legend-key"
+          style="
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+          "
+        >
+          <img
+            src="../img/3_(7).jpg"
+            width="14"
+            height="14"
+            alt="Parking icon"
+          />
+        </span>
+        <span>Cycle Parking</span>
+      </div>
     </div>
-    <div class="legend-row">
-        <img src="./img/3_(7).jpg" width="14" height="14" style="margin-right:8px;" alt="Parking icon" />
-        <span class="legend-label">Cycle Parking</span>
-    </div>
-    <div class="legend-row">
-        <span class="legend-key" style="background: #B71C1C; border-radius:50%;"></span>
-        <span class="legend-label">Accidents (2018–2023)</span>
-    </div>
-    <div class="legend-row">
-        <img src="./img/noun-london-underground-1-01.jpg" width="14" height="14" style="margin-right:8px;" alt="Tube icon" />
-        <span class="legend-label">Tube Stations</span>
-    </div>
-    <div class="legend-row">
-        <img src="./img/graduate.jpg" width="14" height="14" style="margin-right:8px;" alt="University icon" />
-        <span class="legend-label">Universities</span>
-    </div>
-</div>
 
-<script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiYWlsYWdyYW50MjMiLCJhIjoiY202ODRuZmFjMDl4OTJtcjNvNnY1anoydiJ9.IwkY6zSc0skaG5Rrsb_Bog';
-
-    const map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/ailagrant23/cmaduf03h00qh01sd9t8834gr/draft',
-        center: [-0.1275, 51.5072],
-        zoom: 9.5
-    });
-
-    // Layers to toggle
-    const layers = [
-        { id: 'cycle-network-intersected-4326', name: 'Cycle Network' },
-        { id: 'cycle-parking-4326', name: 'Cycle Parking' },
-        { id: 'accident-2018-2023-4326', name: 'Accidents (2018–2023)' },
-        { id: 'underground-tube-stations-4326', name: 'Tube Stations' },
-        { id: 'higher-education-establishments-4326', name: 'Universities' }
-    ];
-
-    map.on('load', () => {
-        const menu = document.getElementById('menu');
-
-        layers.forEach(layer => {
-            // container for checkbox + label
-            const container = document.createElement('div');
-            container.className = 'layer-toggle';
-
-            // checkbox
-            const checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            checkbox.id = 'cb-' + layer.id;
-            checkbox.checked = true;
-
-            // label
-            const label = document.createElement('label');
-            label.htmlFor = checkbox.id;
-            label.textContent = layer.name;
-
-            // toggle layer visibility on change
-            checkbox.addEventListener('change', () => {
-                const visibility = checkbox.checked ? 'visible' : 'none';
-                map.setLayoutProperty(layer.id, 'visibility', visibility);
-            });
-
-            container.appendChild(checkbox);
-            container.appendChild(label);
-            menu.appendChild(container);
-        });
-    });
-</script>
-</body>
+    <script src="general_map.js"></script>
+  </body>
 </html>
