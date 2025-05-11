@@ -21,7 +21,7 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
 
     <!-- Link to our CSS file -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="planner_map.css">
 </head>
 
 <body>
@@ -53,9 +53,8 @@
         <!-- Explanation text section (no border) -->
         <div class="explore-section">
             <div class="explore-content">
-                This is an introduction of how to use this map, legend or whatever we want to show to the users. What
-                should I write in the second sentence I don't know. Hope this is long enough for us to test. Maybe more
-                words I'm not sure.
+                This map presents cyclist casualty data from 2018 to 2023 to help planners improve cycling safety. Users can choose from
+                the three options below to view different datasets. Relevant statistics are shown on the right-hand side of the screen.
             </div>
         </div>
 
@@ -66,7 +65,7 @@
                 <div class="panel-option-content">
                     <div class="panel-option-title">Accident Rate per LSOA</div>
                     <div class="legend" id="option1-legend">
-                        <div class="legend-item explanatory">How this was calculated: formula formula formula ...</div>
+                        <div class="legend-item explanatory">This is calculated by dividing the number of casualties in an LSOA by the estimated number of cyclists, based on the proportion of people commuting by bicycle from the 2021 Census. Note that this approach may introduce some bias for non-working-age residents.</div>
                         <div class="legend-item">0.0%</div>
                         <div class="legend-item">0.1%-5.3%</div>
                         <div class="legend-item">5.3%-11.7%</div>
@@ -81,6 +80,7 @@
                 <div class="panel-option-content">
                     <div class="panel-option-title">Road Risk Level</div>
                     <div class="legend" id="option2-legend">
+                        <div class="legend-item explanatory">Risk levels are based on the number of casualties per unit length of road. Roads classified as Very Low had no reported cyclist casualties between 2018 and 2023.</div>
                         <div class="legend-item">Very low</div>
                         <div class="legend-item">Low</div>
                         <div class="legend-item">Moderate</div>
@@ -106,7 +106,7 @@
     </div>
 
     <!-- Link to our JavaScript file -->
-    <script src="script.js"></script>
+    <script src="planner_map.js"></script>
 </body>
 
 </html>
