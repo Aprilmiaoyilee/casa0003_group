@@ -614,7 +614,7 @@ async function findNearestStations(startPoint, universityName) {
     );
 
     // Add routes to map with different colors
-    const colors = ["#764ade", "#9e83ec", "#c6c1f6"];
+    const colors = ["#ff7700", "#ff9900", "#ffbb00"];
 
     // Ensure routes are drawn above isochrones but below other interactive layers
     // Find the first isochrone layer if any exists to place routes above it
@@ -781,7 +781,7 @@ async function findNearestStations(startPoint, universityName) {
 
 async function createIsochrones(startPoint) {
   console.log("Creating isochrones for:", startPoint);
-  const colors = ["#ffbb00", "#ff9900", "#ff7700"]; // Colors for 5, 10, 15 min
+  const colors = ["#FFEB00", "#FED402", "#ffbb00"]; // Colors for 5, 10, 15 min
   const minutes = [5, 10, 15]; // Time in minutes
 
   try {
@@ -910,7 +910,7 @@ function createMapLegend(minutes) {
   legend.appendChild(title);
 
   // Add legend items
-  const colors = ["#ff7700", "#ff9900", "#ffbb00"]; // Same colors as isochrones
+  const colors = ["#ffbb00", "#FED402", "#FFEB00"]; // Same colors as isochrones
 
   minutes.forEach((minute, i) => {
     const item = document.createElement("div");
