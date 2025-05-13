@@ -61,6 +61,20 @@
             color: var(--purple-dark);
         }
 
+        .content-section p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .overview-image {
+            display: block;
+            width: 100%;
+            max-width: 1000px;
+            margin: 30px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
         .quote {
             font-style: italic;
             font-size: 18px;
@@ -133,13 +147,64 @@
     <h2>What is London CycleNet?</h2>
     <p>London CycleNet brings together multiple datasets in one place, including: cycle networks, bicycle parking, university locations, Underground stations, and bicycle accident data. It helps students assess bike accessibility to their universities, supports the GLA in analysing accident trends, and visualises reachability within 15-minute rides.</p>
 
+    <!-- Overview Image -->
+    <img src="../img/Cycling_London.jpg" alt="Cycling in London" class="overview-image">
+
     <h2>A Cycling Culture Growing</h2>
     <p>London’s cycle network is rapidly expanding. The Mayor's Cycling Action Plan aims to make cycling safer and more connected, encouraging active travel for all Londoners.</p>
 
     <div class="quote">
         “THE LONDON PLAN IS PART OF REALISING THAT VISION, AND OF REVOLUTIONISING THE WAY WE GET AROUND OUR CITY – ENABLING A BOOM IN ACTIVE TRAVEL, WITH WALKING AND CYCLING BECOMING THE PRIMARY, DEFAULT CHOICE FOR MILLIONS OF LONDONERS BECAUSE WE HAVE MADE IT FAR EASIER AND SAFER.” <br><em>(The London Plan 2021, p.14)</em>
     </div>
+
+    <!-- Cycle Stages Chart -->
+    <canvas id="cycleChart" width="1000" height="400" style="max-width:100%; margin:10px auto; display:block;"></canvas>
+    <p class="graph-source" style="font-size:14px; text-align:left; color:#555; margin-top:10px;">Source: TfL Strategic Analysis, Customer & Strategy <a href="https://tfl.gov.uk/cdn/static/cms/documents/travel-in-london-2024-active-travel-trends-data-acc.xlsx" style="color:var(--purple-dark); text-decoration:underline;">https://tfl.gov.uk/cdn/static/cms/documents/travel-in-london-2024-active-travel-trends-data-acc.xlsx</a><br>Note: Data for 2020-2021 is absent due to COVID-19 restrictions</p>
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const ctx = document.getElementById('cycleChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [2015, 2016, 2017, 2018, 2019, 2022, 2023, 2024],
+                datasets: [
+                    {
+                        label: 'Central London',
+                        data: [0.14, 0.14, 0.14, 0.14, 0.13, 0.16, 0.17, 0.18],
+                        backgroundColor: 'rgba(75, 60, 128, 0.6)'
+                    },
+                    {
+                        label: 'Inner London',
+                        data: [0.53, 0.51, 0.53, 0.52, 0.52, 0.58, 0.62, 0.65],
+                        backgroundColor: 'rgba(157, 157, 200, 0.6)'
+                    },
+                    {
+                        label: 'Outer London',
+                        data: [0.42, 0.40, 0.43, 0.43, 0.40, 0.45, 0.47, 0.49],
+                        backgroundColor: 'rgba(41, 33, 82, 0.6)'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Daily Cycle Stages (in millions) by area, seven day-week average, 2015-2024',
+                        font: { size: 18 }
+                    }
+                },
+                scales: {
+                    x: { title: { display: true, text: 'Year' } },
+                    y: { beginAtZero: true, title: { display: true, text: 'Stages (millions)' } }
+                }
+            }
+        });
+    });
+</script>
 
 <section class="content-section" id="policies">
     <h2>Key Policies</h2>
@@ -163,20 +228,24 @@
         <tbody>
         <tr>
             <td>Cycle Network for London</td>
-            <td></td>
-            <td></td>
+            <td>September 2021</td>
+            <td>
+                Accessed via OSMnx:<br>
+                <a href="https://www.openstreetmap.org/#map=5/54.91/-3.43">OpenStreetMap</a><br>
+                <a href="https://cycling.data.tfl.gov.uk/">TfL Cycling Data</a>
+            </td>
         </tr>
         <tr>
             <td>Bicycle Parking</td>
-            <td></td>
-            <td></td>
+            <td>September 2021</td>
+            <td><a href="https://cycling.data.tfl.gov.uk/">TfL Cycling Data</a></td>
         </tr>
         <tr>
             <td>Universities</td>
             <td>March 2025</td>
             <td>
                 Accessed via Digimap OS Student License:<br>
-                <a href="https://digimap.edina.ac.uk/os">https://digimap.edina.ac.uk/os</a><br>
+                <a href="https://digimap.edina.ac.uk/os">Digimap OS</a><br>
                 <a href="https://www.ordnancesurvey.co.uk/products/points-of-interest">Ordnance Survey POI</a>
             </td>
         </tr>
@@ -185,14 +254,29 @@
             <td>March 2025</td>
             <td>
                 Accessed via Digimap OS Student License:<br>
-                <a href="https://digimap.edina.ac.uk/os">https://digimap.edina.ac.uk/os</a><br>
+                <a href="https://digimap.edina.ac.uk/os">Digimap OS</a><br>
                 <a href="https://www.ordnancesurvey.co.uk/products/points-of-interest">Ordnance Survey POI</a>
             </td>
         </tr>
         <tr>
             <td>Road Accidents</td>
             <td>2018 - 2023</td>
-            <td><a href="https://data.london.gov.uk/dataset/recorded_crime_summary">London Data Portal</a></td>
+            <td><a href="https://www.data.gov.uk/dataset/cb7ae6f0-4be6-4935-9277-47e5ce24a11f/road-accidents-safety-data">UK Road Accidents Safety Data</a></td>
+        </tr>
+        <tr>
+            <td>Travel to Work Method</td>
+            <td>2021</td>
+            <td><a href="https://statistics.ukdataservice.ac.uk/dataset/england-and-wales-census-2021-rm077-method-used-to-travel-to-work-by-distance-travelled-to-work">Census 2021 RM077</a></td>
+        </tr>
+        <tr>
+            <td>LSOA Level Population</td>
+            <td>2021</td>
+            <td><a href="https://data.london.gov.uk/census/2021-ward-and-lsoa-estimates/">London Census 2021 Estimates</a></td>
+        </tr>
+        <tr>
+            <td>LSOA Boundaries</td>
+            <td>2021</td>
+            <td><a href="https://data.london.gov.uk/dataset/statistical-gis-boundary-files-london">London GIS Boundary Files</a></td>
         </tr>
         <tr>
             <td>Greater London Authority (GLA) Boundary</td>
