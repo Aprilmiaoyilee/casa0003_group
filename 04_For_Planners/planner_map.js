@@ -776,7 +776,7 @@ map.on("load", () => {
         <div>Accidents: ${
           properties.cyclists_per_lsoa_multi_6_accident_count || 0
         }</div>
-        <div>Rate: ${
+        <div>Accident Rate: ${
           properties.allacciden
             ? (properties.allacciden * 100).toFixed(1) + "%"
             : "None"
@@ -818,7 +818,7 @@ map.on("load", () => {
         <div>Accidents: ${
           properties.cyclists_per_lsoa_multi_6_accident_count || 0
         }</div>
-        <div>Rate: None</div>
+        <div>Accident Rate: None</div>
       </div>
     `;
 
