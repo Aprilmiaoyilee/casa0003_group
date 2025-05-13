@@ -770,7 +770,7 @@ map.on("load", () => {
     const html = `
       <div style="font-family: 'Mulish', sans-serif; color: var(--purple-dark);">
         <div style="font-weight: bold;">${properties.LSOA11NM || "None"}</div>
-        <div>Cyclists: ${Math.round(
+        <div>Cyclists (2018-2023): ${Math.round(
           properties.cyclists_per_lsoa_multi_6_cyclists_per_lsoa_multi6 || 0
         )}</div>
         <div>Accidents: ${
@@ -812,7 +812,7 @@ map.on("load", () => {
     const html = `
       <div style="font-family: 'Mulish', sans-serif; color: var(--purple-dark);">
         <div style="font-weight: bold;">${properties.LSOA11NM || "None"}</div>
-        <div>Cyclists: ${Math.round(
+        <div>Cyclists (2018-2023): ${Math.round(
           properties.cyclists_per_lsoa_multi_6_cyclists_per_lsoa_multi6 || 0
         )}</div>
         <div>Accidents: ${
