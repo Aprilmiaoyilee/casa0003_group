@@ -156,7 +156,55 @@
     <div class="quote">
         “THE LONDON PLAN IS PART OF REALISING THAT VISION, AND OF REVOLUTIONISING THE WAY WE GET AROUND OUR CITY – ENABLING A BOOM IN ACTIVE TRAVEL, WITH WALKING AND CYCLING BECOMING THE PRIMARY, DEFAULT CHOICE FOR MILLIONS OF LONDONERS BECAUSE WE HAVE MADE IT FAR EASIER AND SAFER.” <br><em>(The London Plan 2021, p.14)</em>
     </div>
+
+    <!-- Cycle Stages Chart -->
+    <canvas id="cycleChart" width="1000" height="400" style="max-width:100%; margin:10px auto; display:block;"></canvas>
+    <p class="graph-source" style="font-size:14px; text-align:left; color:#555; margin-top:10px;">Source: TfL Strategic Analysis, Customer & Strategy <a href="https://tfl.gov.uk/cdn/static/cms/documents/travel-in-london-2024-active-travel-trends-data-acc.xlsx" style="color:var(--purple-dark); text-decoration:underline;">https://tfl.gov.uk/cdn/static/cms/documents/travel-in-london-2024-active-travel-trends-data-acc.xlsx</a><br>Note: Data for 2020-2021 is absent due to COVID-19 restrictions</p>
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const ctx = document.getElementById('cycleChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [2015, 2016, 2017, 2018, 2019, 2022, 2023, 2024],
+                datasets: [
+                    {
+                        label: 'Central London',
+                        data: [0.14, 0.14, 0.14, 0.14, 0.13, 0.16, 0.17, 0.18],
+                        backgroundColor: 'rgba(75, 60, 128, 0.6)'
+                    },
+                    {
+                        label: 'Inner London',
+                        data: [0.53, 0.51, 0.53, 0.52, 0.52, 0.58, 0.62, 0.65],
+                        backgroundColor: 'rgba(157, 157, 200, 0.6)'
+                    },
+                    {
+                        label: 'Outer London',
+                        data: [0.42, 0.40, 0.43, 0.43, 0.40, 0.45, 0.47, 0.49],
+                        backgroundColor: 'rgba(41, 33, 82, 0.6)'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Daily Cycle Stages (in millions) by area, seven day-week average, 2015-2024',
+                        font: { size: 18 }
+                    }
+                },
+                scales: {
+                    x: { title: { display: true, text: 'Year' } },
+                    y: { beginAtZero: true, title: { display: true, text: 'Stages (millions)' } }
+                }
+            }
+        });
+    });
+</script>
 
 <section class="content-section" id="policies">
     <h2>Key Policies</h2>
