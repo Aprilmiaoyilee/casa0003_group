@@ -729,9 +729,6 @@ map.on("load", () => {
     }
   });
 
-  // Set zoom level restriction for road accident layer
-  map.setLayerZoomRange("road-accident-rates-cycle-only", 9, 20);
-
   // Initialise option1 layers (default selection)
   const defaultGroup = layerGroups["option1"];
   if (defaultGroup) {
@@ -744,28 +741,6 @@ map.on("load", () => {
       );
     });
   }
-
-  // Add zoom event listener
-  map.on("zoom", () => {
-    const currentZoom = map.getZoom();
-    const isRoadsActive = document
-      .querySelector('[data-option-id="option2"]')
-      .classList.contains("selected");
-
-    // Show road accident layer when zoom level is appropriate
-    if (currentZoom >= 9 && currentZoom < 12 && isRoadsActive) {
-      map.setLayoutProperty(
-        "road-accident-rates-cycle-only",
-        "visibility",
-        "visible"
-      );
-      map.setPaintProperty(
-        "road-accident-rates-cycle-only",
-        "line-opacity",
-        0.8
-      );
-    }
-  });
 
   // Add mouse hover
   map.on("mousemove", "accident-rate", (e) => {
@@ -981,16 +956,6 @@ document.querySelectorAll(".panel-option").forEach((option) => {
           });
         }
       });
-    }
-
-    // Special check for road risk option
-    if (optionId === "option2") {
-      const currentZoom = map.getZoom();
-      if (currentZoom < 9) {
-        alert("Zoom level should be greater than 9 to view road risks");
-        this.classList.remove("selected");
-        legend.classList.remove("active");
-      }
     }
   });
 });
