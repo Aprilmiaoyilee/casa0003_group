@@ -767,6 +767,7 @@ map.on("load", () => {
     }
   });
 
+  // Add mouse hover
   map.on("mousemove", "accident-rate", (e) => {
     if (
       !document
@@ -775,23 +776,19 @@ map.on("load", () => {
     )
       return;
 
-    // 获取当前要素
     const feature = e.features[0];
     if (!feature || !feature.properties) return;
 
-    // 生成唯一ID (使用LSOA代码或其他唯一标识)
+    // get unique id
     const currentFeatureId =
       feature.properties.LSOA11CD ||
       feature.id ||
       JSON.stringify(feature.properties);
 
-    // 如果是同一个要素，不重复显示popup
     if (currentFeatureId === lastFeatureId) return;
 
-    // 更新最后处理的要素ID
     lastFeatureId = currentFeatureId;
 
-    // 设置鼠标指针和显示popup
     map.getCanvas().style.cursor = "pointer";
 
     const properties = feature.properties;
@@ -815,7 +812,7 @@ map.on("load", () => {
     roadPopup.setLngLat(e.lngLat).setHTML(html).addTo(map);
   });
 
-  // 同样更新accident-rate-only-none层的处理
+  // same mouse hover for accident-rate-only-none
   map.on("mousemove", "accident-rate-only-none", (e) => {
     if (
       !document
@@ -853,7 +850,7 @@ map.on("load", () => {
     roadPopup.setLngLat(e.lngLat).setHTML(html).addTo(map);
   });
 
-  // 当鼠标离开要素时重置跟踪
+  // reset tracking when mouseleave
   map.on("mouseleave", "accident-rate", () => {
     map.getCanvas().style.cursor = "";
     roadPopup.remove();
@@ -866,7 +863,7 @@ map.on("load", () => {
     lastFeatureId = null;
   });
 
-  // 地图移动时也重置
+  // reset tracking when map moves
   map.on("movestart", () => {
     roadPopup.remove();
     lastFeatureId = null;
