@@ -35,7 +35,7 @@ document.head.appendChild(style);
 
 const ANIMATION_DURATION = 200;
 
-// Accident data for the line chart (2018-2023)
+// Accident data for the option1 chart
 const accidentData = [
   { year: 2018, fatal: 12, serious: 770, slight: 3973, total: 4755 },
   { year: 2019, fatal: 5, serious: 773, slight: 3852, total: 4630 },
@@ -132,7 +132,7 @@ function animateLayerOpacity(layerId, layerType, targetOpacity, onComplete) {
 // Store active charts
 const activeCharts = {};
 
-// Function to render option1 chart (Accident Trends by Year)
+// Function to render option1 chart
 const renderOption1Chart = (container) => {
   // Clear container
   container.innerHTML = "";
