@@ -14,7 +14,7 @@ body {
   top: 0;
   bottom: 0;
   width: 100%;
-  margin-top: 48px; /* Add margin equal to navbar height */
+  margin-top: 48px;
 }
 
 .map-title {
@@ -119,7 +119,7 @@ body {
 
 .isochrone-15 {
   background-color: #ffbb00;
-} */
+}  already in js*/
 
 /* Cycle parking highlight */
 .cycle-parking-highlight {
@@ -213,7 +213,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: visible; /* Allow chart elements to overflow */
+  overflow: visible;
 }
 
 /* Charts stack container */
@@ -228,7 +228,7 @@ body {
 }
 
 .charts-stack > * {
-  pointer-events: auto; /* Restore pointer events for children */
+  pointer-events: auto;
 }
 
 /* Explore section */
@@ -278,7 +278,7 @@ body {
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   margin-left: 10px;
-  font-size: 15px; /* Increased size */
+  font-size: 15px;
 }
 
 .option-circle {
@@ -515,12 +515,3 @@ svg .chart-title {
     height: 60vh;
   }
 }
-
-/* .side-panel {
-  border: 3px solid red !important;
-}
-
-#instructions-container {
-  border: 3px solid blue !important;
-}
- */

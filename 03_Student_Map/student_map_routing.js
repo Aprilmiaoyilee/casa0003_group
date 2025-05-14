@@ -54,7 +54,7 @@ map.on("load", () => {
   // Store all tube stations when map loads
   collectTubeStations();
 
-  // 1. Set up interaction for university points (using vector tile source)
+  // Set up interaction for university points
   map.on("mouseenter", "higher-education-establishments-4326", (e) => {
     map.getCanvas().style.cursor = "pointer";
 
@@ -95,8 +95,6 @@ map.on("load", () => {
   });
 
   // Handle all university selection features
-  // Modified Solution 1: Place cycle network layer in the right position
-  // Modified Solution: Ensure university and tube icons stay on top of all layers
   async function handleUniversitySelection(coordinates, universityName) {
     console.log(`Handling selection of university: ${universityName}`);
 
@@ -107,11 +105,11 @@ map.on("load", () => {
     clearPreviousLayers();
 
     try {
-      // 1. First create isochrones (will be placed at the bottom)
+      // First create isochrones (will be placed at the bottom)
       console.log("Creating isochrones first...");
       await createIsochrones(start);
 
-      // 2. Make the cycle network visible and position it above isochrones
+      // Make the cycle network visible and position it above isochrones
       console.log("Setting cycle network visibility and order...");
       if (map.getLayer("cycle-network-intersected-4326")) {
         // Make sure the cycle network is visible
@@ -139,15 +137,15 @@ map.on("load", () => {
         }
       }
 
-      // 3. Then find nearest stations and create routes (will appear above cycle network)
+      // Then find nearest stations and create routes (will appear above cycle network)
       console.log("Finding nearest stations third...");
       await findNearestStations(start, universityName);
 
-      // 4. Show nearby cycle parking (will appear below university and tube icons)
+      // Show nearby cycle parking (will appear below university and tube icons)
       console.log("Showing nearby cycle parking...");
       await showNearbyCycleParking(start);
 
-      // 5. Make sure university and tube icons stay on top
+      // Make sure university and tube icons stay on top
       console.log("Ensuring university and tube icons stay on top...");
 
       // List of icon layers that should always be on top (in order from bottom to top)
@@ -169,7 +167,7 @@ map.on("load", () => {
       console.error("Error processing university selection:", error);
     }
   }
-  // 2. Set up interaction for metro stations (using vector tile source)
+  // Set up interaction for metro stations (using vector tile source)
   map.on("mouseenter", "underground-tube-stations-4326", (e) => {
     map.getCanvas().style.cursor = "pointer";
 
@@ -407,7 +405,7 @@ async function findNearestStations(startPoint, universityName) {
   try {
     console.log("Collecting tube stations for travel time calculation...");
 
-    // APPROACH 1: Get all tube stations from the current map view first
+    // Get all tube stations from the current map view first
     const visibleStations = map.queryRenderedFeatures({
       layers: ["underground-tube-stations-4326"],
     });
@@ -420,7 +418,7 @@ async function findNearestStations(startPoint, universityName) {
       }));
     }
 
-    // APPROACH 2: If we have too few stations visible, temporarily zoom out to see more
+    // sIf we have too few stations visible, temporarily zoom out to see more
     if (stationsToCheck.length < 10) {
       console.log(
         "Few stations visible, temporarily zooming out to collect more"
@@ -485,7 +483,7 @@ async function findNearestStations(startPoint, universityName) {
       map.setCenter(originalCenter);
     }
 
-    // APPROACH 3: If still not enough stations, use previously collected stations
+    //If still not enough stations, use previously collected stations
     if (stationsToCheck.length < 5 && tubeStations.length > 0) {
       console.log(`Using ${tubeStations.length} previously collected stations`);
       stationsToCheck = [...tubeStations];
@@ -1132,7 +1130,7 @@ async function showNearbyCycleParking(startPoint) {
             }
 
             // Approach 2: If we can use vector tile source features, try a more accurate count
-            // but with density-based adjustment to avoid unrealistic numbers
+            // but it proves the approach 1 works better
             if (isVectorSource && sourceLayer) {
               console.log(
                 "Trying to count cycle parking using source features"
@@ -1152,8 +1150,6 @@ async function showNearbyCycleParking(startPoint) {
                     filter: ["within", coords],
                   });
 
-                  // Process features to remove duplicates (common issue with vector tiles)
-                  // This still isn't perfect but helps reduce unrealistic counts
                   const uniqueIDs = new Set();
                   const uniqueFeatures = features.filter((feature) => {
                     // Create a unique ID based on the feature's coordinates
@@ -1310,7 +1306,7 @@ function clearPreviousLayers() {
   });
   currentIsochroneLayers = [];
 
-  // Clear previous route layers and markers
+  // Clear previous route layers and markers after choosing a new campus
   currentRoutes.forEach((routeId) => {
     if (typeof routeId === "string") {
       // It's a layer ID
@@ -1365,8 +1361,7 @@ map.on("click", "underground-tube-stations-4326", (e) => {
   }
 });
 
-// This script handles the integration between the original student map
-// and the features from the planner's map
+// This script handles the to be consisit with layouts in Council Map
 
 // Wait for document to fully load
 document.addEventListener("DOMContentLoaded", function () {
@@ -1546,11 +1541,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
-/**
- * University Chart Code - Integrated from student_map_chart.js
- * Modified for better size handling and error management
- */
 
 // Main function to create the university accessibility chart
 function createUniversityChart(containerId, width = null, height = null) {
