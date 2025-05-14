@@ -61,9 +61,21 @@
             color: var(--purple-dark);
         }
 
-        .content-section p {
+        .content-section h3 {
+            font-size: 22px;
+            margin-top: 30px;
+            color: var(--purple-dark);
+        }
+
+        .content-section p,
+        .content-section ul {
             font-size: 16px;
             line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .content-section ul {
+            padding-left: 20px;
         }
 
         .overview-image {
@@ -75,10 +87,22 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
+        .graph-source {
+            font-size:14px;
+            text-align:left;
+            color:#555;
+            margin-top:10px;
+            margin-bottom:0;
+        }
+
+        #policies {
+            padding-top: 20px;
+        }
+
         .quote {
             font-style: italic;
             font-size: 18px;
-            margin: 30px 0;
+            margin: 30px 0; /* increased top and bottom spacing */
             padding-left: 20px;
             border-left: 4px solid var(--purple-dark);
             color: var(--purple-dark);
@@ -87,7 +111,7 @@
         .policy-boxes {
             display: flex;
             gap: 20px;
-            margin-top: 40px;
+            margin-top: 20px;
         }
 
         .policy-box {
@@ -96,10 +120,9 @@
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            min-height: 150px;
         }
 
-        table.dataset-table {
+        .dataset-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
@@ -145,21 +168,24 @@
 
 <section class="content-section" id="overview">
     <h2>What is London CycleNet?</h2>
-    <p>London CycleNet brings together multiple datasets in one place, including: cycle networks, bicycle parking, university locations, Underground stations, and bicycle accident data. It helps students assess bike accessibility to their universities, supports the GLA in analysing accident trends, and visualises reachability within 15-minute rides.</p>
+    <p>London CycleNet brings together multiple datasets in one place, including: cycle networks, bicycle parking, university locations, Underground stations, and bicycle accident data. It helps students assess bike accessibility to their universities and visualises reachability within 15-minute rides while supporting the GLA and local councils in analysing accident trends to promote safer spaces.</p>
 
-    <!-- Overview Image -->
+    <!-- Moved image before quote -->
     <img src="../img/Cycling_London.jpg" alt="Cycling in London" class="overview-image">
 
-    <h2>A Cycling Culture Growing</h2>
-    <p>London’s cycle network is rapidly expanding. The Mayor's Cycling Action Plan aims to make cycling safer and more connected, encouraging active travel for all Londoners.</p>
-
+    <h3>Quote from Sadiq Khan – Mayor of London</h3>
     <div class="quote">
-        “THE LONDON PLAN IS PART OF REALISING THAT VISION, AND OF REVOLUTIONISING THE WAY WE GET AROUND OUR CITY – ENABLING A BOOM IN ACTIVE TRAVEL, WITH WALKING AND CYCLING BECOMING THE PRIMARY, DEFAULT CHOICE FOR MILLIONS OF LONDONERS BECAUSE WE HAVE MADE IT FAR EASIER AND SAFER.” <br><em>(The London Plan 2021, p.14)</em>
+        “THE LONDON PLAN IS PART OF REALISING THAT VISION, AND OF REVOLUTIONISING THE WAY WE GET AROUND OUR CITY – ENABLING A BOOM IN ACTIVE TRAVEL, WITH WALKING AND CYCLING BECOMING THE PRIMARY, DEFAULT CHOICE FOR MILLIONS OF LONDONERS BECAUSE WE HAVE MADE IT FAR EASIER AND SAFER.”<br><em>(The London Plan 2021, p.14)</em>
     </div>
 
+    <h2>A Cycling Culture Growing</h2>
+    <p>London’s cycle network is rapidly expanding. The Cycling Action Plan aims to make cycling safer and more connected, encouraging active travel for all Londoners.</p>
+    <p><strong>Sadiq Khan – Mayor of London</strong> has largely been in favour of active travel, setting goals such as 70% of London residents achieving at least 20 minutes of active travel per day by 2041 (Travel in London 2023, p.5).</p>
+    <p>Between 2015 and 2024, daily cycling trips rose by 237,961—a 21% increase over that period.</p>
+
     <!-- Cycle Stages Chart -->
-    <canvas id="cycleChart" width="1000" height="400" style="max-width:100%; margin:10px auto; display:block;"></canvas>
-    <p class="graph-source" style="font-size:14px; text-align:left; color:#555; margin-top:10px;">Source: TfL Strategic Analysis, Customer & Strategy <a href="https://tfl.gov.uk/cdn/static/cms/documents/travel-in-london-2024-active-travel-trends-data-acc.xlsx" style="color:var(--purple-dark); text-decoration:underline;">https://tfl.gov.uk/cdn/static/cms/documents/travel-in-london-2024-active-travel-trends-data-acc.xlsx</a><br>Note: Data for 2020-2021 is absent due to COVID-19 restrictions</p>
+    <canvas id="cycleChart" width="1000" height="400" style="max-width:100%; margin:20px auto; display:block;"></canvas>
+    <p class="graph-source" style="$1 margin:5px 0 10px 0;">Source: TfL Strategic Analysis, Customer &amp; Strategy <a href="https://tfl.gov.uk/cdn/static/cms/documents/travel-in-london-2024-active-travel-trends-data-acc.xlsx" style="color:var(--purple-dark); text-decoration:underline;">https://tfl.gov.uk/cdn/static/cms/documents/travel-in-london-2024-active-travel-trends-data-acc.xlsx</a><br>Note: Data for 2020–2021 is absent due to COVID-19 restrictions</p>
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -206,15 +232,53 @@
     });
 </script>
 
-<section class="content-section" id="policies">
-    <h2>Key Policies</h2>
+<!-- Policies and Plans -->
+<section class="content-section" id="policies" style="margin-top:20px;">
+    <h2>Policies and Plans</h2>
+    <p>Here are several key policies and plans that are crucial to the development of cycle networks.</p>
     <div class="policy-boxes">
-        <div class="policy-box">[Policy 1]</div>
-        <div class="policy-box">[Policy 2]</div>
-        <div class="policy-box">[Policy 3]</div>
+        <div class="policy-box">
+            <h3>Vision Zero</h3>
+            <ul>
+                <li><strong>Safe Speed:</strong> reduce collisions, encourage walking &amp; cycling, lower pollution and noise</li>
+                <li><strong>Safe Streets:</strong> focus on high-risk areas to reduce injuries, enhance safety on streets</li>
+                <li><strong>Safe Vehicles:</strong> reduce motor vehicle use, promote safer design</li>
+                <li><strong>Safe Behavior:</strong> promote safe travel and mutual respect, reduce danger</li>
+                <li><strong>Post-Collision Response:</strong> analyse collisions and add safer systems to lower risk</li>
+            </ul>
+        </div>
+        <div class="policy-box">
+            <h3>Active Travel</h3>
+            <ul>
+                <li>Cycle Sundays</li>
+                <li>Cycle Skills Training</li>
+                <li>Santander Cycling</li>
+                <li>New Cycleways</li>
+                <li>Walking &amp; Cycling Grants</li>
+                <li>Discover London by walking or cycling</li>
+            </ul>
+            <p>Greatest risk of injury: 80% of deaths and serious injuries occur to people walking, cycling, or riding motorcycles (Vision Zero Action Plan, 2018, p.15).</p>
+        </div>
+        <div class="policy-box">
+            <h3>Cycling Action Plan</h3>
+            <ul>
+                <li><strong>Key Targets:</strong></li>
+                <ul>
+                    <li>1.6 million daily cycle journeys by 2030</li>
+                    <li>40% of Londoners living within 400m of a Cycleway by 2030</li>
+                </ul>
+                <li><strong>Achievements:</strong></li>
+                <ul>
+                    <li>360km of Cycleway routes – quadrupling network since 2016</li>
+                    <li>17k+ TfL &amp; borough-funded parking spaces since 2019</li>
+                    <li>163k+ children and adults received cycle training</li>
+                </ul>
+            </ul>
+        </div>
     </div>
 </section>
 
+<!-- Datasets Used -->
 <section class="content-section" id="datasets">
     <h2>Datasets Used</h2>
     <table class="dataset-table">
@@ -285,6 +349,15 @@
         </tr>
         </tbody>
     </table>
+    <h3>Sources</h3>
+    <ul>
+        <li>“Cycling Action Plan 2” (2023). Mayor of London. Transport for London. Available at: <a href="https://content.tfl.gov.uk/cycling-action-plan.pdf">https://content.tfl.gov.uk/cycling-action-plan.pdf</a></li>
+        <li>Cycling in London | London City Hall (no date). Available at: <a href="https://www.london.gov.uk/programmes-strategies/transport/cycling-london">https://www.london.gov.uk/programmes-strategies/transport/cycling-london</a></li>
+        <li>Matters, T. for L.| E.J. (no date) New TfL data shows cycling journeys in London are up by 26 per cent compared to 2019 levels. Transport for London. Available at: <a href="https://tfl.gov.uk/info-for/media/press-releases/2024/november/new-tfl-data-shows-cycling-journeys-in-london-are-up-by-26-per-cent-compared-to-2019-levels">https://tfl.gov.uk/info-for/media/press-releases/2024/november/new-tfl-data-shows-cycling-journeys-in-london-are-up-by-26-per-cent-compared-to-2019-levels</a></li>
+        <li>Matters, T. for L.| E.J. (no date) New TfL data shows sustained increases in walking and cycling in the capital. Transport for London. Available at: <a href="https://tfl.gov.uk/info-for/media/press-releases/2023/december/new-tfl-data-shows-sustained-increases-in-walking-and-cycling-in-the-capital">https://tfl.gov.uk/info-for/media/press-releases/2023/december/new-tfl-data-shows-sustained-increases-in-walking-and-cycling-in-the-capital</a></li>
+        <li>Matters, T. for L.| E.J. (no date) Travel in London reports. Transport for London. Available at: <a href="https://www.tfl.gov.uk/corporate/publications-and-reports/travel-in-london-reports">https://www.tfl.gov.uk/corporate/publications-and-reports/travel-in-london-reports</a></li>
+        <li>“The London Plan” (2021). The Spatial Development Strategy for Greater London. Available at: <a href="https://www.london.gov.uk/programmes-strategies/planning/london-plan/london-plan-2021#:~:text=The%20London%20Plan%202021%20is,Mayor's%20vision%20for%20Good%20Growth">https://www.london.gov.uk/programmes-strategies/planning/london-plan/london-plan-2021</a></li>
+    </ul>
 </section>
 
 <footer>
