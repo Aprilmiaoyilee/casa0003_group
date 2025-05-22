@@ -369,7 +369,7 @@ const renderOption2Chart = (container) => {
     top: 30,
     right: 10,
     bottom: 35,
-    left: chartCenterX - 30, // Position y-axis near center
+    left: chartCenterX - 30,
   };
 
   const width = containerWidth - margin.left - margin.right;
@@ -609,7 +609,7 @@ const arrangeCharts = () => {
   const chartStack = document.getElementById("charts-stack");
   const chartElements = document.querySelectorAll(".chart-container");
 
-  // Sort charts by priority (option1: highest, option3: lowest)
+  // Sort charts by priority
   const chartsSorted = [];
 
   chartElements.forEach((chart) => {
@@ -665,13 +665,12 @@ chartStyle.textContent = `
 document.head.appendChild(chartStyle);
 
 // Toggle chart visibility when an option is selected/deselected
-// Toggle chart visibility when an option is selected/deselected
 const toggleChart = (optionId) => {
   const chartStack = document.getElementById("charts-stack");
   const existingChart = document.getElementById(`${optionId}-chart`);
 
   if (existingChart) {
-    // Remove chart if it exists - apply closing animation first
+    // Remove chart if it exists
     existingChart.classList.add("closing");
     existingChart.classList.remove("visible");
 
@@ -729,7 +728,7 @@ map.on("load", () => {
     }
   });
 
-  // Initialise option1 layers (default selection)
+  // Initialise option1 layers as default selection
   const defaultGroup = layerGroups["option1"];
   if (defaultGroup) {
     defaultGroup.layers.forEach((layerId) => {
@@ -771,14 +770,12 @@ map.on("load", () => {
       <div style="font-family: 'Mulish', sans-serif; color: var(--purple-dark);">
         <div style="font-weight: bold;">${properties.LSOA11NM || "None"}</div>
         <div>Cyclists (2018-2023): ${Math.round(
-          properties.cyclists_per_lsoa_multi_6_cyclists_per_lsoa_multi6 || 0
+          properties.cyclists_per_lsoa_multi6 || 0
         )}</div>
-        <div>Accidents: ${
-          properties.cyclists_per_lsoa_multi_6_accident_count || 0
-        }</div>
+        <div>Accidents: ${properties.accident_count || 0}</div>
         <div>Accident Rate: ${
-          properties.allacciden
-            ? (properties.allacciden * 100).toFixed(1) + "%"
+          properties.accident_rate
+            ? (properties.accident_rate * 100).toFixed(1) + "%"
             : "None"
         }</div>
       </div>
@@ -813,11 +810,9 @@ map.on("load", () => {
       <div style="font-family: 'Mulish', sans-serif; color: var(--purple-dark);">
         <div style="font-weight: bold;">${properties.LSOA11NM || "None"}</div>
         <div>Cyclists (2018-2023): ${Math.round(
-          properties.cyclists_per_lsoa_multi_6_cyclists_per_lsoa_multi6 || 0
+          properties.cyclists_per_lsoa_multi6 || 0
         )}</div>
-        <div>Accidents: ${
-          properties.cyclists_per_lsoa_multi_6_accident_count || 0
-        }</div>
+        <div>Accidents: ${properties.accident_count || 0}</div>
         <div>Accident Rate: None</div>
       </div>
     `;
